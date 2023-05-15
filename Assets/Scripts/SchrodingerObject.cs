@@ -27,21 +27,25 @@ public class SchrodingerObject : MonoBehaviour
         /*
             Active Object renderer in Camera view
         */
-        if(!ObjectRenderer.enabled)return;
-        if(ObjectRenderer.isVisible)
+        //if(!ObjectRenderer.enabled)return;
+        if(Vector3.Angle(dir, Camera.main.transform.forward) <= 90)
         {
-            ObjectRenderer.enabled = true;
-            if(deactiveCollider && col != null)col.enabled = true;
         }
 
         /*
             Deactive object renderer when not in camera view 
         */
-        if(Vector3.Angle(dir, Camera.main.transform.forward) > player.fov)
+        if(Vector3.Angle(dir, Camera.main.transform.forward) > 90)
         {
-            if(ObjectRenderer.isVisible)return;
+            //if(ObjectRenderer.isVisible)return;
             ObjectRenderer.enabled = false;
             if(deactiveCollider && col != null)col.enabled = false;
+        }
+        else
+        {
+            ObjectRenderer.enabled = true;
+            if(deactiveCollider && col != null)col.enabled = true;
+
         }
     }
 
