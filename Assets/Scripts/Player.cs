@@ -16,8 +16,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(Input.GetKey(KeyCode.LeftArrow))this.transform.Rotate(Vector3.down, 50 * Time.deltaTime);
-        else if(Input.GetKey(KeyCode.RightArrow))this.transform.Rotate(Vector3.up, 50 * Time.deltaTime);
+        
     }
 
     private void OnDrawGizmos()
