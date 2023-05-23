@@ -15,7 +15,7 @@ public class SchrodingerObject : MonoBehaviour
     {
         ObjectRenderer = this.GetComponent<Renderer>();
         col = this.GetComponent<Collider>();
-        player = Camera.main.GetComponent<Player>();
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame

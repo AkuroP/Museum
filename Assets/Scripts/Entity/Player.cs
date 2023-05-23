@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
@@ -8,9 +9,13 @@ public class Player : MonoBehaviour
     [Range(0f, 360f)]
     public float fov = 180f;
     // Start is called before the first frame update
+    [SerializeField]
+
+    private NavMeshObstacle navMeshObstacle;
+    public NavMeshObstacle NavMeshObstacle { get { return navMeshObstacle; } set { navMeshObstacle = value; } }
     private void Start()
     {
-        
+        navMeshObstacle = this.GetComponent<NavMeshObstacle>();
     }
 
     // Update is called once per frame

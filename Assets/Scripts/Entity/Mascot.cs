@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Mascot : Entity
 {
+    
      // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        //Debug.Log(player.name);
+        agent = this.GetComponent<NavMeshAgent>();
+        IdleState.entityStateMachine = this.GetComponent<EntityStateMachine>();
+        FollowState.entityStateMachine = this.GetComponent<EntityStateMachine>();
+
         //entre en idle state
         CurrentState = IdleState;
 
@@ -17,20 +25,6 @@ public class Mascot : Entity
     void Update()
     {
         CurrentState.UpdateState(this);
-    }
-
-    private void ChangeState(EntityState state)
-    {
-        CurrentState.ExitState(this);
-
-        CurrentState = state;
-        CurrentState.EnterState(this);
-    }
-
-    public void StateChange(int ui)
-    {
-        if(ui == 0)ChangeState(IdleState);
-        else if(ui == 1)ChangeState(FollowState);
     }
     
 }

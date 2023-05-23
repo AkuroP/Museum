@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Entity : MonoBehaviour
 {
@@ -32,6 +34,16 @@ public class Entity : MonoBehaviour
     }
     #endregion
 
+    #region EntityParameter
+    [SerializeField]
+    protected Player player;
+    protected NavMeshAgent agent;
+
+    public Player Player { get { return player;} set {  player = value;} }
+    public NavMeshAgent Agent { get { return agent;} set {  agent = value;} }
+
+    #endregion
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,4 +55,6 @@ public class Entity : MonoBehaviour
     {
         
     }
+
+    
 }
