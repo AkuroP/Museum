@@ -11,11 +11,11 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
 
-    private NavMeshObstacle navMeshObstacle;
-    public NavMeshObstacle NavMeshObstacle { get { return navMeshObstacle; } set { navMeshObstacle = value; } }
+    private NavMeshAgent navMeshAgent;
+    public NavMeshAgent NavMeshAgent { get { return navMeshAgent; } set { navMeshAgent = value; } }
     private void Start()
     {
-        navMeshObstacle = this.GetComponent<NavMeshObstacle>();
+        navMeshAgent = this.GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
