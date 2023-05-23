@@ -11,7 +11,7 @@ public class IdleState : EntityState
 
     public override void UpdateState(Entity state)
     {
-        if(Vector3.Distance(this.transform.position, state.Player.transform.position) > state.Player.NavMeshObstacle.radius)
+        if(Vector3.Distance(this.transform.position, state.Player.transform.position) > (state.Player.NavMeshAgent.radius + state.Agent.stoppingDistance))
         {
             entityStateMachine.ChangeState(state.FollowState);
         }
