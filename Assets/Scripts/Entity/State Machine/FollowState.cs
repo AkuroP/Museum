@@ -6,7 +6,7 @@ public class FollowState : EntityState
 {
     public override void EnterState(Entity state)
     {
-        Debug.Log("Enter Follow State");
+        //Debug.Log("Enter Follow State");
     }
 
     public override void UpdateState(Entity state)
@@ -23,6 +23,6 @@ public class FollowState : EntityState
 
     public override void ExitState(Entity state)
     {
-        Debug.Log("Exit Follow State");
+        //Debug.Log("Exit Follow State");
     }
 }

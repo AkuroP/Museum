@@ -55,13 +55,13 @@ public class SchrodingerObject : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Debug.Log($"{this.name} became invisible");
-        //ObjectRenderer.enabled = false;
+        //Debug.Log($"{this.name} became invisible");
+        
     }
 
     private void OnBecameVisible()
     {
-        Debug.Log($"{this.name} became visible !");
-        //ObjectRenderer.enabled = true;
+        //Debug.Log($"{this.name} became visible !");
+        
     }
 }

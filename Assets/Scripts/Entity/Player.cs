@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.VFX;
 
 public class Player : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class Player : MonoBehaviour
 
     private NavMeshAgent navMeshAgent;
     public NavMeshAgent NavMeshAgent { get { return navMeshAgent; } set { navMeshAgent = value; } }
+
+    [SerializeField]
+    private VisualEffect portalVisual;
+
     private void Start()
     {
         navMeshAgent = this.GetComponent<NavMeshAgent>();
