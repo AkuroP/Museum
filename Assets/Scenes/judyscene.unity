@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &62065882
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5025,6 +5025,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tentacule8 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a99b7af8ced14924485a8b40f8ccebe1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a99b7af8ced14924485a8b40f8ccebe1, type: 3}
 --- !u!1 &341195447
@@ -9859,7 +9864,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2fb70ab7f580774469a726c00f2e6644,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.2
+      value: -0.83
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fb70ab7f580774469a726c00f2e6644,
         type: 3}
@@ -9901,10 +9906,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 546717213813354235, guid: 2fb70ab7f580774469a726c00f2e6644,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2fb70ab7f580774469a726c00f2e6644,
         type: 3}
       propertyPath: m_Name
       value: grosloup4
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2fb70ab7f580774469a726c00f2e6644,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fb70ab7f580774469a726c00f2e6644, type: 3}
@@ -9986,7 +10001,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695272415}
   m_LocalRotation: {x: -0, y: -0.7500588, z: -0, w: 0.6613711}
-  m_LocalPosition: {x: 4.45, y: 1, z: 0.13}
+  m_LocalPosition: {x: 1.13, y: 0.39, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10093,6 +10108,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tentacule2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d61b8f46a0f19914d9701521fbc68bb9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d61b8f46a0f19914d9701521fbc68bb9, type: 3}
 --- !u!1001 &1070062510
@@ -10161,6 +10181,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tentacule1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: da192b39bb67dea4695d912908f8994b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da192b39bb67dea4695d912908f8994b, type: 3}
@@ -10267,8 +10292,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073959322}
   m_LocalRotation: {x: -0, y: -0.7069604, z: -0, w: 0.70725316}
-  m_LocalPosition: {x: 0, y: 0.886, z: 0}
-  m_LocalScale: {x: 1.1061, y: 1.6859175, z: 1.1061}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
+  m_LocalScale: {x: -0.44887906, y: -0.68418145, z: -0.44887906}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -10632,6 +10657,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: loup
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3a116564b04b09c4d8deb8e05714bec4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a116564b04b09c4d8deb8e05714bec4, type: 3}
 --- !u!1001 &1815933524
@@ -10701,6 +10731,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tentacule7
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e7b5fc84426793b458dd90d94c358947,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7b5fc84426793b458dd90d94c358947, type: 3}
 --- !u!1001 &1839685334
@@ -10723,7 +10758,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: fdb373872e16cfa41b52e84edfe5a813,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.3
+      value: 26.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fdb373872e16cfa41b52e84edfe5a813,
         type: 3}
@@ -10769,6 +10804,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tentacule4
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdb373872e16cfa41b52e84edfe5a813,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdb373872e16cfa41b52e84edfe5a813, type: 3}
@@ -10839,6 +10879,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tentacule6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5a8374df6e6a6254db697fd454c4bcfa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a8374df6e6a6254db697fd454c4bcfa, type: 3}
 --- !u!1001 &2078314709
@@ -10861,7 +10906,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a99b7af8ced14924485a8b40f8ccebe1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.2
+      value: 16.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a99b7af8ced14924485a8b40f8ccebe1,
         type: 3}
@@ -10908,6 +10953,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tentacule8
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a99b7af8ced14924485a8b40f8ccebe1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a99b7af8ced14924485a8b40f8ccebe1, type: 3}
 --- !u!1001 &2144721557
@@ -10930,7 +10980,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f1b7e5b9b8dbfd24483ce05fb5b13641,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1b7e5b9b8dbfd24483ce05fb5b13641,
         type: 3}
@@ -10976,6 +11026,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Body_low
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f1b7e5b9b8dbfd24483ce05fb5b13641,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1b7e5b9b8dbfd24483ce05fb5b13641, type: 3}
