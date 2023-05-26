@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/CameraVision.unity
-    guid: 9e88b9bcb1e86bd47825d0ca6b6b00a2
+    path: Assets/Scenes/herebes musee vr project.unity
+    guid: 7daff14af9554be4db0119e016ef069f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}

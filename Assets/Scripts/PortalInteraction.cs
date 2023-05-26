@@ -45,6 +45,8 @@ public class PortalInteraction : MonoBehaviour
 
     [SerializeField]
     private Vector3 portalInitialScale;
+    [SerializeField]
+    private Vector3 portalTargetScale;
 
     [SerializeField]
     private Transform rHand;
@@ -101,7 +103,7 @@ public class PortalInteraction : MonoBehaviour
         if (!r_IsGrabbing || !l_IsGrabbing) return;
         if (portalOpen) return;
 
-        if(portal.localScale.x >= .6f)
+        if(portal.localScale.x >= portalTargetScale.x)
         {
             centerPortal.Play();
             StartCoroutine(DimensionChange(5f));
@@ -114,15 +116,16 @@ public class PortalInteraction : MonoBehaviour
     {
         r_InterActualPos.transform.position = new Vector3(r_InterMinPos.transform.position.x + 0.01f, r_InterMinPos.transform.position.y, r_InterMinPos.transform.position.z);
         l_InterActualPos.transform.position = new Vector3(l_InterMinPos.transform.position.x - 0.01f, l_InterMinPos.transform.position.y, l_InterMinPos.transform.position.z);
-        r_InterActualPos.SetActive(false);
-        l_InterActualPos.SetActive(false);
+        r_InterActualPos.GetComponent<MeshRenderer>().enabled = false;
+        l_InterActualPos.GetComponent<MeshRenderer>().enabled = false;
         portalOpen = true;
         yield return new WaitForSeconds(time);
+        r_InterActualPos.GetComponent<MeshRenderer>().enabled = true;
+        l_InterActualPos.GetComponent<MeshRenderer>().enabled = true;
+        centerPortal.Stop();
         startingWorld.SetActive(false);
         destinationWorld.SetActive(true);
         portalOpen = false;
-        r_InterActualPos.SetActive(true);
-        l_InterActualPos.SetActive(true);
         portal.localScale = portalInitialScale;
     }
 
