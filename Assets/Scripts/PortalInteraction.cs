@@ -59,6 +59,9 @@ public class PortalInteraction : MonoBehaviour
     [SerializeField]
     private bool l_IsGrabbing;
 
+    [Tooltip("90/270° = true, 0/180° = false")]
+    [SerializeField]
+    private bool horizontalDir;
     public void LOnRelease()
     {
         l_IsGrabbing = false;
@@ -89,12 +92,14 @@ public class PortalInteraction : MonoBehaviour
     private void LTrackHand()
     {
         if (!l_IsGrabbing) return;
-        l_InterActualPos.transform.position = new Vector3(lHand.position.x, l_InterActualPos.transform.position.y, l_InterActualPos.transform.position.z);
+        if(horizontalDir)l_InterActualPos.transform.position = new Vector3(l_InterActualPos.transform.position.x, l_InterActualPos.transform.position.y, lHand.transform.position.z);
+        else l_InterActualPos.transform.position = new Vector3(lHand.transform.position.x, l_InterActualPos.transform.position.y, l_InterActualPos.transform.position.z);
     }
     private void RTrackHand()
     {
         if (!r_IsGrabbing) return;
-        r_InterActualPos.transform.position = new Vector3(rHand.position.x, r_InterActualPos.transform.position.y, r_InterActualPos.transform.position.z);
+        if (horizontalDir) r_InterActualPos.transform.position = new Vector3(r_InterActualPos.transform.position.x, r_InterActualPos.transform.position.y, rHand.transform.position.z);
+        else r_InterActualPos.transform.position = new Vector3(rHand.transform.position.x, r_InterActualPos.transform.position.y, r_InterActualPos.transform.position.z);
     }
 
 
