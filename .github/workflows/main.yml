@@ -167,48 +167,49 @@ jobs:
     name: Build for Android 📱
     runs-on: ubuntu-latest
     strategy:
-        fail-fast: false
+      fail-fast: false
     steps:
-        - name: Checkout code
+      - name: Checkout code
         uses: actions/checkout@v2
 
 
-        - name: Create LFS file list
+      - name: Create LFS file list
         run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
 
 
-        - name: Restore LFS cache
+      - name: Restore LFS cache
         uses: actions/cache@v2
         id: lfs-cache
         with:
-            path: .git/lfs
-            key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
+          path: .git/lfs
+          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
 
 
-        - name: Git LFS Pull
+      - name: Git LFS Pull
         run: |
-            git lfs pull
-            git add .
-            git reset --hard
+          git lfs pull
+          git add .
+          git reset --hard
 
-        - name: Restore Library cache
+      - name: Restore Library cache
         uses: actions/cache@v2
         with:
-            path: Library
-            key: Library-build-Android
-            restore-keys: |
+          path: Library
+          key: Library-build-Android
+          restore-keys: |
             Library-build-
             Library-
 
-        - uses: game-ci/unity-builder@v2
+      - uses: game-ci/unity-builder@v2
         with:
-            targetPlatform: Android
+          targetPlatform: Android
 
 
-        - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v2
         with:
-            name: build-Android
-            path: build/Android
+          name: build-Android
+          path: build/Android
+
 
 
 
@@ -230,5 +231,5 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          branch: build-pages
+          branch: gh-pages
           folder: build/WebGL
