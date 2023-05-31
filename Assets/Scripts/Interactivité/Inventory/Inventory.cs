@@ -24,10 +24,17 @@ public class Inventory : MonoBehaviour
             InventoryVR.transform.eulerAngles = new Vector3(Anchor.transform.eulerAngles.x + 15, Anchor.transform.eulerAngles.y, 0);
 
         }
+        else
+            InventoryVR.SetActive(false);
     }
 
     public void OpenInventory()
     {
         openInvent = true;     
+    }
+
+    public void QuitInventory()
+    {
+        openInvent = false;
     }
 }
