@@ -426,9 +426,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75331c9aa98139e48ba248536a0316e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 0}
+  currentState: {fileID: 3032055871568433055}
   idleState: {fileID: 3032055871568433055}
   followState: {fileID: 3032055871568433054}
+  wanderState: {fileID: 0}
   player: {fileID: 0}
 --- !u!195 &3032055871568433052
 NavMeshAgent:
