@@ -15,7 +15,7 @@ public class Animals : Entity
         IdleState.entityStateMachine = this.GetComponent<EntityStateMachine>();
         FollowState.entityStateMachine = this.GetComponent<EntityStateMachine>();
         WanderState.entityStateMachine = this.GetComponent<EntityStateMachine>();
-
+        Anim = this.GetComponent<Animator>();
         //entre en idle state
         //CurrentState = IdleState;
 
