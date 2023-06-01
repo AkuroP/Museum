@@ -1792,7 +1792,7 @@ GameObject:
   - component: {fileID: 306205770}
   m_Layer: 0
   m_Name: RightHand Controller
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3381,7 +3381,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401407741}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
   m_Name: 
@@ -4073,7 +4073,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509935262}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
   m_Name: 
@@ -5073,6 +5073,7 @@ MonoBehaviour:
       type: 3}
   itemInSlot: {fileID: 0}
   slotImage: {fileID: 0}
+  stacked: 0
 --- !u!54 &565455245
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5866,6 +5867,7 @@ MonoBehaviour:
       type: 3}
   itemInSlot: {fileID: 0}
   slotImage: {fileID: 0}
+  stacked: 0
 --- !u!4 &836943336 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 631640181216349451, guid: 76647797334317f478d4f92921a7ecad,
@@ -7661,7 +7663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InventoryVR: {fileID: 2076893299}
   Anchor: {fileID: 1774150056}
-  openInvent: 0
+  openInvent: 1
 --- !u!4 &1317767877 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1519074066109432436, guid: 7e0e47784fff22446aafe33960be28e1,
@@ -7946,6 +7948,19 @@ MonoBehaviour:
   inSlot: 0
   slotRotation: {x: 0, y: 0, z: 0}
   currentSlot: {fileID: 0}
+  grabRelease:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Grab Release
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 52fbdcf6-1f63-4bbe-a44a-0b0405ee00e6
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &1447729861
 GameObject:
   m_ObjectHideFlags: 0
@@ -8090,6 +8105,7 @@ MonoBehaviour:
       type: 3}
   itemInSlot: {fileID: 0}
   slotImage: {fileID: 0}
+  stacked: 0
 --- !u!54 &1563669750
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8448,6 +8464,10 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
+  primary: {fileID: 0}
+  canTP: 0
+  LeftTP: {fileID: 0}
+  RightTP: {fileID: 0}
 --- !u!1 &1614643951
 GameObject:
   m_ObjectHideFlags: 0
@@ -9917,7 +9937,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
@@ -10123,6 +10143,7 @@ MonoBehaviour:
       type: 3}
   itemInSlot: {fileID: 0}
   slotImage: {fileID: 0}
+  stacked: 0
 --- !u!54 &2050564060
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10686,6 +10707,10 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
+  primary: {fileID: 5358705539240547971, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  canTP: 0
+  LeftTP: {fileID: 509935267}
+  RightTP: {fileID: 401407746}
 --- !u!114 &2144492428
 MonoBehaviour:
   m_ObjectHideFlags: 0
