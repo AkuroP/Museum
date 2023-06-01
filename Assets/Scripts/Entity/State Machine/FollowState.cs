@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class FollowState : EntityState
 {
+    [SerializeField]
+    private bool followPlayer = false;
+    public bool FollowPlayer
+    {
+        get { return followPlayer; }
+        set { followPlayer = value; }
+    }
+
     public override void EnterState(Entity state)
     {
         //Debug.Log("Enter Follow State");

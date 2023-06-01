@@ -14,6 +14,8 @@ public class Entity : MonoBehaviour
     private IdleState idleState;
     [SerializeField]
     private FollowState followState;
+    [SerializeField]
+    private WanderingState wanderState;
     public EntityState CurrentState
     {
         get{return currentState;}
@@ -31,6 +33,11 @@ public class Entity : MonoBehaviour
     {
         get{return followState;}
         set{followState = value;}
+    }
+    public WanderingState WanderState
+    {
+        get{return wanderState;}
+        set{wanderState = value;}
     }
     #endregion
 

@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 
 public class ActivateTeleportationRay : MonoBehaviour
-    {
+{
         public GameObject leftRay;
         public GameObject rightRay;
 
@@ -16,11 +16,18 @@ public class ActivateTeleportationRay : MonoBehaviour
         public InputActionProperty leftCancel;
         public InputActionProperty rightCancel;
 
-        void Update()
-        {
-        leftRay.SetActive(leftCancel.action.ReadValue<float>() < 0.1f && leftActivate.action.ReadValue<float>() > 0.1f);
+        //public InputActionProperty grab;
 
-        rightRay.SetActive(rightCancel.action.ReadValue<float>() < 0.1f && rightActivate.action.ReadValue<float>() > 0.1f);
-        }
-    }
+       void Update()
+       {
+            leftRay.SetActive(leftCancel.action.ReadValue<float>() < 0.1f && leftActivate.action.ReadValue<float>() > 0.1f);
+
+            rightRay.SetActive(rightCancel.action.ReadValue<float>() < 0.1f && rightActivate.action.ReadValue<float>() > 0.1f);
+
+            /*if(grab.action.ReadValue<float>() > 0.1f)
+            {
+            Debug.Log("grabbed");
+            }*/
+       }
+}
 
