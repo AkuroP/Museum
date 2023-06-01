@@ -37,6 +37,7 @@ public class WanderingState : EntityState
         }
         else
         {
+            state.Anim.SetFloat("Speed", state.Agent.speed);
             timer += Time.deltaTime;
 
         }

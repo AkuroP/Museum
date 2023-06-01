@@ -14,6 +14,7 @@ public class Mascot : Entity
         agent = this.GetComponent<NavMeshAgent>();
         IdleState.entityStateMachine = this.GetComponent<EntityStateMachine>();
         FollowState.entityStateMachine = this.GetComponent<EntityStateMachine>();
+        Anim = this.GetComponent<Animator>();
 
         //entre en idle state
         CurrentState = IdleState;

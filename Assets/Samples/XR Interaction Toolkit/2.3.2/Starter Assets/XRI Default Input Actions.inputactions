@@ -639,6 +639,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "TPEnable",
+                    "type": "Button",
+                    "id": "0f9a9bdf-61be-4625-8dac-625f586cbc5c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -760,6 +769,17 @@
                     "processors": "ScaleVector2(y=0),StickDeadzone",
                     "groups": "Generic XR Controller",
                     "action": "Rotate Anchor",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c1faca0-e6c5-4234-99cb-d5d71c04e310",
+                    "path": "<XRController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TPEnable",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
