@@ -11,6 +11,13 @@ public class FollowState : EntityState
         get { return followPlayer; }
         set { followPlayer = value; }
     }
+    [SerializeField]
+    private Transform followTarget;
+    public Transform FollowTarget
+    {
+        get { return followTarget; } 
+        set { followTarget = value; }
+    }
 
     public override void EnterState(Entity state)
     {
@@ -20,7 +27,7 @@ public class FollowState : EntityState
 
     public override void UpdateState(Entity state)
     {
-        state.Agent.SetDestination(state.Player.transform.position);
+        state.Agent.SetDestination(followTarget.position);
         //a voir avec le mouvement du rb ?
         //currentSpeed = Mathf.Lerp(currentSpeed, state.Agent.speed, currentSpeed * Time.deltaTime);
         
@@ -29,7 +36,7 @@ public class FollowState : EntityState
         //Debug.Log("1 : " + Vector3.Distance(this.transform.position, state.Player.transform.position));
         //Debug.Log("2 : " + state.Player.NavMeshAgent.radius + state.Agent.stoppingDistance);
         
-        if (Vector3.Distance(this.transform.position, state.Player.transform.position) <= (state.Player.NavMeshAgent.radius + state.Agent.stoppingDistance))
+        if (followPlayer && Vector3.Distance(this.transform.position, state.Player.transform.position) <= (state.Player.NavMeshAgent.radius + state.Agent.stoppingDistance))
         {
             Debug.Log("STPOP");
             entityStateMachine.ChangeState(state.IdleState);

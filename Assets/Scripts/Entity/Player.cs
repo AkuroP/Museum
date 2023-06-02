@@ -15,8 +15,6 @@ public class Player : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     public NavMeshAgent NavMeshAgent { get { return navMeshAgent; } set { navMeshAgent = value; } }
 
-    [SerializeField]
-    private VisualEffect portalVisual;
 
     private void Start()
     {

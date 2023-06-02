@@ -560,6 +560,10 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
+  primary: {fileID: 5358705539240547971, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  canTP: 0
+  LeftTP: {fileID: 5875220099185267220}
+  RightTP: {fileID: 5875220099042137013}
 --- !u!195 &5875220098638870330
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -596,7 +600,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fov: 180
   navMeshAgent: {fileID: 5875220098638870330}
-  portalVisual: {fileID: 0}
 --- !u!1 &5875220098735905457
 GameObject:
   m_ObjectHideFlags: 0

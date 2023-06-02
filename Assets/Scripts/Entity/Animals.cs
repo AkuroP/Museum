@@ -18,7 +18,6 @@ public class Animals : Entity
         Anim = this.GetComponent<Animator>();
         //entre en idle state
         //CurrentState = IdleState;
-
         CurrentState.EnterState(this);
     }
 
