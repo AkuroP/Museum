@@ -16,7 +16,6 @@ public class Item : MonoBehaviour
         {
             if (grabRelease.action.WasPressedThisFrame())
             {
-            Debug.Log("frite");
             Grabbed();
             }
         }
