@@ -8,7 +8,7 @@ public class Item : MonoBehaviour
     public bool inSlot;
     public Vector3 slotRotation = Vector3.zero;
     public Slot currentSlot;
-    public InputActionProperty grabRelease;
+    [SerializeField] InputActionProperty grabRelease;
 
     private void OnTriggerStay(Collider other)
     {

@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    public GameObject InventoryVR;
-    public GameObject Anchor;
-    public bool openInvent;
+    [SerializeField] GameObject InventoryVR;
+    [SerializeField] GameObject Anchor;
+    [SerializeField] bool openInvent;
 
     private void Start()
     {

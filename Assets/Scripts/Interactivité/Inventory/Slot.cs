@@ -6,12 +6,12 @@ using UnityEngine.InputSystem;
 
 public class Slot : MonoBehaviour
 {
-    public InputActionProperty grab;
-    public GameObject itemInSlot;
-    public Image slotImage;
+    [SerializeField] InputActionProperty grab;
+    [SerializeField] GameObject itemInSlot;
+    [SerializeField] Image slotImage;
     Color originalColor;
 
-    public bool stacked;
+    [SerializeField] bool stacked;
 
     void Start()
     {

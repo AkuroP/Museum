@@ -7,19 +7,19 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class ActivateTeleportationRay : MonoBehaviour
 {
-    public GameObject leftRay;
-    public GameObject rightRay;
+    [SerializeField] GameObject leftRay;
+    [SerializeField] GameObject rightRay;
 
-    public InputActionProperty leftActivate;
-    public InputActionProperty rightActivate;
+    [SerializeField] InputActionProperty leftActivate;
+    [SerializeField] InputActionProperty rightActivate;
 
-    public InputActionProperty leftCancel;
-    public InputActionProperty rightCancel;
+    [SerializeField] InputActionProperty leftCancel;
+    [SerializeField] InputActionProperty rightCancel;
 
-    public InputActionReference primary;
-    public bool canTP;
-    public XRRayInteractor LeftTP;
-    public XRRayInteractor RightTP;
+    [SerializeField] InputActionReference primary;
+    [SerializeField] bool canTP;
+    [SerializeField] XRRayInteractor LeftTP;
+    [SerializeField] XRRayInteractor RightTP;
 
     //public InputActionProperty grab;
     private void Awake()
