@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEditor;
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(CrystalCluster)), CanEditMultipleObjects]
 public class CrystalClusterEditor : Editor 
 {
@@ -18,3 +19,4 @@ public class CrystalClusterEditor : Editor
       
     }
 }
+#endif
