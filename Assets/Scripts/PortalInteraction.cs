@@ -62,6 +62,9 @@ public class PortalInteraction : MonoBehaviour
     [Tooltip("90/270° = true, 0/180° = false")]
     [SerializeField]
     private bool horizontalDir;
+    
+    [SerializeField]
+    private Material nextWorldSkyBoxMat;
     public void LOnRelease()
     {
         l_IsGrabbing = false;
@@ -131,6 +134,7 @@ public class PortalInteraction : MonoBehaviour
         l_InterActualPos.GetComponent<MeshRenderer>().enabled = false;
         portalOpen = true;
         yield return new WaitForSeconds(time);
+        RenderSettings.skybox = nextWorldSkyBoxMat;
         r_InterActualPos.GetComponent<MeshRenderer>().enabled = true;
         l_InterActualPos.GetComponent<MeshRenderer>().enabled = true;
         centerPortal.Stop();

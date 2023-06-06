@@ -5265,12 +5265,13 @@ MonoBehaviour:
   centerPortal: {fileID: 1208033143327623722}
   portal: {fileID: 1208033143878528413}
   portalInitialScale: {x: 0.04, y: 0.55, z: 0.45}
-  portalTargetScale: {x: 0.6, y: 0.55, z: 0.45}
+  portalTargetScale: {x: 0.4, y: 0.55, z: 0.4}
   rHand: {fileID: 0}
   lHand: {fileID: 0}
   r_IsGrabbing: 0
   l_IsGrabbing: 0
   horizontalDir: 0
+  nextWorldSkyBoxMat: {fileID: 0}
 --- !u!1 &7079050912213160145
 GameObject:
   m_ObjectHideFlags: 0
