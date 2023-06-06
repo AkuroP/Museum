@@ -53,6 +53,23 @@ public class Entity : MonoBehaviour
     protected Player player;
     protected NavMeshAgent agent;
 
+    [SerializeField]
+    protected DialogConfig[] entityDialog;
+
+    public DialogConfig[] EntityDialog
+    {
+        get { return entityDialog; }
+        set { entityDialog = value; }
+    }
+
+    [SerializeField]
+    private int currentDialogAdvancement;
+    public int CurrentDialogAdvancement
+    {
+        get { return CurrentDialogAdvancement; }
+        set { CurrentDialogAdvancement = value; }
+    }
+
     public Player Player { get { return player;} set {  player = value;} }
     public NavMeshAgent Agent { get { return agent;} set {  agent = value;} }
 
@@ -70,5 +87,9 @@ public class Entity : MonoBehaviour
         
     }
 
-    
+    public void CurrentDialogAdvance()
+    {
+        if (entityDialog[currentDialogAdvancement].alreadyRead) return;
+        currentDialogAdvancement++;
+    }
 }
