@@ -680,8 +680,8 @@ MonoBehaviour:
   m_Camera: {fileID: 6533736769028515900}
   m_OriginBaseGameObject: {fileID: 6533736767711273090}
   m_CameraFloorOffsetObject: {fileID: 6533736767466060268}
-  m_RequestedTrackingOriginMode: 2
-  m_CameraYOffset: 1.1176
+  m_RequestedTrackingOriginMode: 1
+  m_CameraYOffset: 1.8
 --- !u!114 &6533736767711273095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3849,17 +3849,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocomotionVignetteProviders.Array.data[0].m_LocomotionProvider
       value: 
-      objectReference: {fileID: 6533736767711273089}
+      objectReference: {fileID: 0}
     - target: {fileID: 8429981633443581383, guid: 1670dca8ee98f864eb412b51a24c08e1,
         type: 3}
       propertyPath: m_LocomotionVignetteProviders.Array.data[1].m_LocomotionProvider
       value: 
-      objectReference: {fileID: 6533736767711273099}
+      objectReference: {fileID: 0}
     - target: {fileID: 8429981633443581383, guid: 1670dca8ee98f864eb412b51a24c08e1,
         type: 3}
       propertyPath: m_LocomotionVignetteProviders.Array.data[2].m_LocomotionProvider
       value: 
-      objectReference: {fileID: 6533736767711273097}
+      objectReference: {fileID: 0}
     - target: {fileID: 8429981633443581383, guid: 1670dca8ee98f864eb412b51a24c08e1,
         type: 3}
       propertyPath: m_LocomotionVignetteProviders.Array.data[2].m_OverrideDefaultParameters

@@ -26,7 +26,7 @@ public class WanderingState : EntityState
         entityRenderer = state.GetComponentInChildren<MeshRenderer>();
         state.Agent.isStopped = false;
         Vector3 newPos = RandomNavSphere(wanderZone.position, entityRange, -1);
-        state.Agent.SetDestination(new Vector3(newPos.x, 0, newPos.z));
+        state.Agent.SetDestination(newPos);
     }
 
     public override void UpdateState(Entity state)

@@ -82,6 +82,12 @@ public class PortalInteraction : MonoBehaviour
         r_IsGrabbing = true;
     }
 
+    private void Start()
+    {
+        lHand = Camera.main.transform.parent.GetChild(1);        
+        rHand = Camera.main.transform.parent.GetChild(2);        
+    }
+
     private void Update()
     {
         LTrackHand();
@@ -119,8 +125,8 @@ public class PortalInteraction : MonoBehaviour
     }
     public IEnumerator DimensionChange(float time)
     {
-        r_InterActualPos.transform.position = new Vector3(r_InterMinPos.transform.position.x + 0.01f, r_InterMinPos.transform.position.y, r_InterMinPos.transform.position.z);
-        l_InterActualPos.transform.position = new Vector3(l_InterMinPos.transform.position.x - 0.01f, l_InterMinPos.transform.position.y, l_InterMinPos.transform.position.z);
+        r_InterActualPos.transform.position = new Vector3(r_InterMinPos.transform.position.x + 0.01f, r_InterMinPos.transform.position.y, r_InterMinPos.transform.position.z + 0.01f);
+        l_InterActualPos.transform.position = new Vector3(l_InterMinPos.transform.position.x - 0.01f, l_InterMinPos.transform.position.y, l_InterMinPos.transform.position.z - 0.01f);
         r_InterActualPos.GetComponent<MeshRenderer>().enabled = false;
         l_InterActualPos.GetComponent<MeshRenderer>().enabled = false;
         portalOpen = true;
