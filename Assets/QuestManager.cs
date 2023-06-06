@@ -7,23 +7,44 @@ public class QuestManager : MonoBehaviour
 {
     
     [SerializeField] int numberOfEggs;
+    [SerializeField] Sprite eggSprite;
+    [SerializeField] ParticleSystem FXtoPlay;
+
+    [Header("HUD")]
     [SerializeField] List<Image> spriteList;
     [SerializeField] GameObject qCanva;
-    [SerializeField] Sprite eggSprite;
-    [Header("QuestListing")]
-    [SerializeField] bool questEggDone;
+    [SerializeField] GameObject eggHUD;
+    [SerializeField] GameObject artifactHUD;
 
-    public bool QuestEggDone { get => questEggDone; }
+    [Header("QuestListing")]
+    [SerializeField] bool questEggFinished;
+
+    [Header("List of FX")]
+    [SerializeField] ParticleSystem FXegg;
+    [SerializeField] ParticleSystem FXscale;
+
+    [Header("ActualQuest")]
+    [SerializeField] int actual;
+
+    public bool QuestEggFinished { get => questEggFinished; }
 
     private void Start()
 
     {
-        //SpriteList(qCanva);
-        spriteList = SpriteList(qCanva);
+        actual = 1; // A enlever quand il y aura le trigger de la 1ere quest avec le dialogue du dragon
+        spriteList = SpriteList(eggHUD);
     }
     void Update()
     {
-        EggCounter();        
+         switch (actual)
+         {
+             case 0:
+                 break;
+             case 1: 
+                 EggCounter();
+                 break;
+
+         }
     }
 
     // Compte le nombre d'oeufs obtenus pour valider la quête
@@ -35,7 +56,9 @@ public class QuestManager : MonoBehaviour
             {
                 if (i + 1 == numberOfEggs)
                 {
-                    questEggDone = true;
+                    questEggFinished = true;
+                    FXtoPlay = FXegg;
+                    actual = 0;
                     return;
                 }
             }
@@ -56,5 +79,24 @@ public class QuestManager : MonoBehaviour
             imgList.Add(child.GetComponent<Image>());
         }
         return imgList; 
+    }
+
+    public void Feedback()
+    {
+        if( FXtoPlay != null)
+        {
+            FXtoPlay.Play();
+            FXtoPlay = null;
+        }
+    }
+
+    public void FinishEggQuest()
+    {
+        if (questEggFinished)
+        {
+            eggHUD.SetActive(false);
+            artifactHUD.SetActive(true);
+            FXtoPlay = FXscale;
+        }
     }
 }
