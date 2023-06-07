@@ -39,7 +39,6 @@ public class DialogController : MonoBehaviour
         imgSpriteRight.sprite = actualDialog.spriteRight;*/
 
         RefreshBox();
-        entity.CurrentDialogAdvance();
     }
 
     private void RefreshBox()
@@ -70,6 +69,7 @@ public class DialogController : MonoBehaviour
             case DialogConfig.SentenceConfig.CHARACTER.FIRSTCHAR:
                 _dialog.firstCharTxt.transform.parent.gameObject.SetActive(true);
                 _dialog.firstCharTxt.text = sentence.sentence;
+                if(sentence.dialogMat != null)_dialog.firstCharTxt.transform.parent.GetComponent<MeshRenderer>().material = sentence.dialogMat;
                 _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
             break;
             case DialogConfig.SentenceConfig.CHARACTER.SECONDCHAR:

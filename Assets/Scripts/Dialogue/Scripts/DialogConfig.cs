@@ -25,6 +25,8 @@ public class DialogConfig : MonoBehaviour
 
         public AudioClip sfx;
 
+        public Material dialogMat;
+
         //public TextMeshPro txtChar;
     }
 

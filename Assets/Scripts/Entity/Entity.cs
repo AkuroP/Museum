@@ -89,7 +89,6 @@ public class Entity : MonoBehaviour
 
     public void CurrentDialogAdvance()
     {
-        if (entityDialog[currentDialogAdvancement].alreadyRead) return;
         currentDialogAdvancement++;
     }
 }

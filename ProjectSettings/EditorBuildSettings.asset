@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/herebes musee vr project.unity
     guid: 7daff14af9554be4db0119e016ef069f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ui.unity
     guid: 621f53ae48098484591c8ff6d51a784d
   m_configObjects:

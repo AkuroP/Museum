@@ -130,7 +130,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh55150
+  m_Name: pb_Mesh56438
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -294,7 +294,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh55318
+  m_Name: pb_Mesh56608
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -948,18 +948,22 @@ MonoBehaviour:
       une conversation avec toi !
     whoTalk: 0
     sfx: {fileID: 0}
+    dialogMat: {fileID: 0}
   - sentence: 'Bonjour Yuco ! Je suis un <color=#4FC86C>humain</color>.
 
       J''ai
       fui les CRS parce que je ne veux pas payer mes taxes haha'
     whoTalk: 1
     sfx: {fileID: 0}
+    dialogMat: {fileID: 0}
   - sentence: VROUM VRRUMM YUCO DIT VROUM
     whoTalk: 0
     sfx: {fileID: 0}
+    dialogMat: {fileID: 0}
   - sentence: HUMAIN DIT KEKEKKEK
     whoTalk: 1
     sfx: {fileID: 0}
+    dialogMat: {fileID: 0}
 --- !u!114 &157001714 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8557614677308642404, guid: badae0512528be341a251182d470dec3,
@@ -1120,15 +1124,19 @@ MonoBehaviour:
   - sentence: "test du 2\xE8me text"
     whoTalk: 0
     sfx: {fileID: 0}
+    dialogMat: {fileID: 0}
   - sentence: szqdezfregtrh
     whoTalk: 1
     sfx: {fileID: 0}
+    dialogMat: {fileID: 0}
   - sentence: eeee
     whoTalk: 0
     sfx: {fileID: 0}
+    dialogMat: {fileID: 0}
   - sentence: aaaaa
     whoTalk: 1
     sfx: {fileID: 0}
+    dialogMat: {fileID: 0}
 --- !u!43 &192404267
 Mesh:
   m_ObjectHideFlags: 0
@@ -2893,7 +2901,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
@@ -3199,7 +3207,7 @@ Transform:
   - {fileID: 146403803}
   - {fileID: 183356927}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1006064894
 PrefabInstance:
@@ -3287,7 +3295,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh55402
+  m_Name: pb_Mesh56692
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5294,7 +5302,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh171962
+  m_Name: pb_Mesh-10008
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9234,10 +9242,25 @@ PrefabInstance:
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 469861290}
+    - target: {fileID: 1860753158901643693, guid: badae0512528be341a251182d470dec3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d81f945f407d3e48ade7f654bd6afd1, type: 2}
+    - target: {fileID: 2546785050116954970, guid: badae0512528be341a251182d470dec3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c770a126a98597644bbb1197129e0d07, type: 2}
+    - target: {fileID: 4221452850200359246, guid: badae0512528be341a251182d470dec3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4f0d746cad2b8624cb9a0d9b6f8bfbdf, type: 2}
     - target: {fileID: 8162906576775428194, guid: badae0512528be341a251182d470dec3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8162906576775428194, guid: badae0512528be341a251182d470dec3,
         type: 3}
@@ -9309,6 +9332,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1709638315}
+    - target: {fileID: 8557614677308642406, guid: badae0512528be341a251182d470dec3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8557614677461652172, guid: badae0512528be341a251182d470dec3,
         type: 3}
       propertyPath: entityDialog.Array.data[0]
@@ -9322,7 +9350,12 @@ PrefabInstance:
     - target: {fileID: 8792056598015402713, guid: badae0512528be341a251182d470dec3,
         type: 3}
       propertyPath: m_Mass
-      value: 100
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792056598015402713, guid: badae0512528be341a251182d470dec3,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 126
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: badae0512528be341a251182d470dec3, type: 3}
