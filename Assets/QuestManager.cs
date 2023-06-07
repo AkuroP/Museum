@@ -18,6 +18,7 @@ public class QuestManager : MonoBehaviour
 
     [Header("QuestListing")]
     [SerializeField] bool questEggFinished;
+    [SerializeField] bool artifact1;
 
     [Header("List of FX")]
     [SerializeField] ParticleSystem FXegg;
@@ -27,6 +28,7 @@ public class QuestManager : MonoBehaviour
     [SerializeField] int actual;
 
     public bool QuestEggFinished { get => questEggFinished; }
+    public bool Artifact1 { get => artifact1;}
 
     private void Start()
 
@@ -94,6 +96,7 @@ public class QuestManager : MonoBehaviour
     {
         if (questEggFinished)
         {
+            artifact1 = true;
             eggHUD.SetActive(false);
             artifactHUD.SetActive(true);
             FXtoPlay = FXscale;
