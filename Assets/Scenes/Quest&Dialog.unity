@@ -3122,6 +3122,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8557614677461652172, guid: badae0512528be341a251182d470dec3,
         type: 3}
+      propertyPath: currentDialogAdvancement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557614677461652172, guid: badae0512528be341a251182d470dec3,
+        type: 3}
       propertyPath: entityDialog.Array.data[0]
       value: 
       objectReference: {fileID: 1190660733}
