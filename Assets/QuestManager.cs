@@ -27,12 +27,15 @@ public class QuestManager : MonoBehaviour
     [Header("ActualQuest")]
     [SerializeField] int actual;
 
+    [Header("Entity")]
+    [SerializeField] List<Entity> entity;
     public bool QuestEggFinished { get => questEggFinished; }
     public bool Artifact1 { get => artifact1;}
 
     private void Start()
 
     {
+
         actual = 1; // A enlever quand il y aura le trigger de la 1ere quest avec le dialogue du dragon
         spriteList = SpriteList(eggHUD);
     }
@@ -100,6 +103,7 @@ public class QuestManager : MonoBehaviour
             eggHUD.SetActive(false);
             artifactHUD.SetActive(true);
             FXtoPlay = FXscale;
+
         }
     }
 }

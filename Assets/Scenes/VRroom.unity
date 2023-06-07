@@ -2716,6 +2716,7 @@ MonoBehaviour:
   FXegg: {fileID: 1589168001}
   FXscale: {fileID: 1523282050}
   actual: 0
+  entity: []
 --- !u!4 &962975079
 Transform:
   m_ObjectHideFlags: 0
@@ -5580,9 +5581,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6533736769457243137, guid: 248d5dc825f8a5a4fbe39f082f60907b,
         type: 3}
+      propertyPath: m_LineType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533736769457243137, guid: 248d5dc825f8a5a4fbe39f082f60907b,
+        type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 2058239697}
+    - target: {fileID: 6533736769457243139, guid: 248d5dc825f8a5a4fbe39f082f60907b,
+        type: 3}
+      propertyPath: m_ValidColorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533736769457243139, guid: 248d5dc825f8a5a4fbe39f082f60907b,
+        type: 3}
+      propertyPath: m_ValidColorGradient.key0.g
+      value: 0.7956149
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533736769457243139, guid: 248d5dc825f8a5a4fbe39f082f60907b,
+        type: 3}
+      propertyPath: m_ValidColorGradient.key0.r
+      value: 0.2028302
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 248d5dc825f8a5a4fbe39f082f60907b, type: 3}
 --- !u!1001 &7208235777724970444
