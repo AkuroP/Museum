@@ -1568,55 +1568,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &478538382
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 478538384}
-  - component: {fileID: 478538383}
-  m_Layer: 0
-  m_Name: DialogController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &478538383
+--- !u!114 &478538383 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1668603175892660976, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1668603175834114175}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 478538382}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aca8fabf1b5d9ac40a9e28b04a480e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _idCurrentSentence: 0
-  _dialog: {fileID: 1190660733}
-  _audioSource: {fileID: 0}
-  skipDialogInput: {fileID: -8624930442846845475, guid: c348712bda248c246b8c49b3db54643f,
-    type: 3}
---- !u!4 &478538384
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 478538382}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2012465773}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &483183694
 Mesh:
   m_ObjectHideFlags: 0
@@ -3632,76 +3595,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &1190660732
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1190660734}
-  - component: {fileID: 1190660733}
-  m_Layer: 0
-  m_Name: Dialog_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1190660733
+--- !u!114 &1190660733 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1668603174653940226, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1668603175834114175}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1190660732}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3aede5bae63bbf64db056969e3bda21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameFirstChar: Yuco
-  nameSecondChar: Humain
-  firstCharTxt: {fileID: 945577827}
-  secondCharTxt: {fileID: 1698213440}
-  alreadyRead: 0
-  sentenceConfig:
-  - sentence: Bonjour, humain ! je suis <color=red>Yuco</color> et je viens faire
-      une conversation avec toi !
-    whoTalk: 0
-    sfx: {fileID: 0}
-    dialogMat: {fileID: 0}
-  - sentence: 'Bonjour Yuco ! Je suis un <color=#4FC86C>humain</color>.
-
-      J''ai
-      fui les CRS parce que je ne veux pas payer mes taxes haha'
-    whoTalk: 1
-    sfx: {fileID: 0}
-    dialogMat: {fileID: 0}
-  - sentence: VROUM VRRUMM YUCO DIT VROUM
-    whoTalk: 0
-    sfx: {fileID: 0}
-    dialogMat: {fileID: 0}
-  - sentence: HUMAIN DIT KEKEKKEK
-    whoTalk: 1
-    sfx: {fileID: 0}
-    dialogMat: {fileID: 0}
---- !u!4 &1190660734
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1190660732}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2012465773}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1290738793
 GameObject:
   m_ObjectHideFlags: 0
@@ -5065,72 +4970,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1712392663
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1712392664}
-  - component: {fileID: 1712392665}
-  m_Layer: 0
-  m_Name: Dialog_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1712392664
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1712392663}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2012465773}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1712392665
+--- !u!114 &1712392665 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1668603174123950502, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1668603175834114175}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1712392663}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3aede5bae63bbf64db056969e3bda21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameFirstChar: Yuco
-  nameSecondChar: Humain
-  firstCharTxt: {fileID: 945577827}
-  secondCharTxt: {fileID: 1698213440}
-  alreadyRead: 0
-  sentenceConfig:
-  - sentence: "test du 2\xE8me text"
-    whoTalk: 0
-    sfx: {fileID: 0}
-    dialogMat: {fileID: 0}
-  - sentence: szqdezfregtrh
-    whoTalk: 1
-    sfx: {fileID: 0}
-    dialogMat: {fileID: 0}
-  - sentence: eeee
-    whoTalk: 0
-    sfx: {fileID: 0}
-    dialogMat: {fileID: 0}
-  - sentence: aaaaa
-    whoTalk: 1
-    sfx: {fileID: 0}
-    dialogMat: {fileID: 0}
 --- !u!1 &1748946823
 GameObject:
   m_ObjectHideFlags: 0
@@ -5828,40 +5679,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &2012465772
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2012465773}
-  m_Layer: 0
-  m_Name: ----ALL DIALOG----
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2012465773
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2012465772}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 478538384}
-  - {fileID: 1190660734}
-  - {fileID: 1712392664}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2050564057
 GameObject:
   m_ObjectHideFlags: 0
@@ -6468,6 +6285,95 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e0e47784fff22446aafe33960be28e1, type: 3}
+--- !u!1001 &1668603175834114175
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1668603174123950502, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+        type: 3}
+      propertyPath: firstCharTxt
+      value: 
+      objectReference: {fileID: 945577827}
+    - target: {fileID: 1668603174123950502, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+        type: 3}
+      propertyPath: secondCharTxt
+      value: 
+      objectReference: {fileID: 1698213440}
+    - target: {fileID: 1668603174402757138, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668603174402757138, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668603174402757138, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668603174402757138, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668603174402757138, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668603174402757138, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668603174402757138, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668603174402757138, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668603174402757138, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668603174402757138, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668603174402757138, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668603174402757139, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+        type: 3}
+      propertyPath: m_Name
+      value: ----ALL DIALOG----
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668603174653940226, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+        type: 3}
+      propertyPath: firstCharTxt
+      value: 
+      objectReference: {fileID: 945577827}
+    - target: {fileID: 1668603174653940226, guid: 5b870d17ca52cad4db6be1c6fa9aacdf,
+        type: 3}
+      propertyPath: secondCharTxt
+      value: 
+      objectReference: {fileID: 1698213440}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b870d17ca52cad4db6be1c6fa9aacdf, type: 3}
 --- !u!1001 &4428084939353784433
 PrefabInstance:
   m_ObjectHideFlags: 0
