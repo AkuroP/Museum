@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class DialogController : MonoBehaviour
 {
@@ -13,11 +14,21 @@ public class DialogController : MonoBehaviour
 
     public DialogConfig _dialog;
     public AudioSource _audioSource;
+    [SerializeField] InputActionReference skipDialogInput;
+    private InputAction nextDialog;
 
     private void OnEnable()
     {
         //if(_dialog == null)return;
         //PlayDialog(_dialog);
+        nextDialog = skipDialogInput;
+        nextDialog.Enable();
+        nextDialog.performed += NextDialog;
+    }
+
+    private void OnDisable()
+    {
+        nextDialog.Disable();
     }
 
 
@@ -110,6 +121,13 @@ public class DialogController : MonoBehaviour
         _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
         _idCurrentSentence = 0;
         _dialog = null;
+    }
+
+    public void NextDialog(InputAction.CallbackContext ctx)
+    {
+        if(_dialog == null) return;
+        NextSentence();
+
     }
 
 }

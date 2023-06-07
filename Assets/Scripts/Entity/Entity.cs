@@ -66,8 +66,8 @@ public class Entity : MonoBehaviour
     private int currentDialogAdvancement;
     public int CurrentDialogAdvancement
     {
-        get { return CurrentDialogAdvancement; }
-        set { CurrentDialogAdvancement = value; }
+        get { return currentDialogAdvancement; }
+        set { currentDialogAdvancement = value; }
     }
 
     public Player Player { get { return player;} set {  player = value;} }

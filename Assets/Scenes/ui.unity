@@ -130,7 +130,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh56438
+  m_Name: pb_Mesh32378
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -294,7 +294,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh56608
+  m_Name: pb_Mesh32548
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2172,6 +2172,8 @@ MonoBehaviour:
   _idCurrentSentence: 0
   _dialog: {fileID: 146403804}
   _audioSource: {fileID: 0}
+  skipDialogInput: {fileID: -8624930442846845475, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
 --- !u!1 &520749545
 GameObject:
   m_ObjectHideFlags: 0
@@ -3295,7 +3297,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh56692
+  m_Name: pb_Mesh32632
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4959,6 +4961,7 @@ MonoBehaviour:
   player: {fileID: 0}
   entityDialog: []
   currentDialogAdvancement: 0
+  entityTag: 0
 --- !u!1 &1543124185
 GameObject:
   m_ObjectHideFlags: 0
@@ -5302,7 +5305,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-10008
+  m_Name: pb_Mesh-3192
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8445,6 +8448,7 @@ MonoBehaviour:
   player: {fileID: 0}
   entityDialog: []
   currentDialogAdvancement: 0
+  entityTag: 0
 --- !u!195 &2125167536
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -9315,7 +9319,7 @@ PrefabInstance:
     - target: {fileID: 8557614675570723856, guid: badae0512528be341a251182d470dec3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8557614675570723866, guid: badae0512528be341a251182d470dec3,
         type: 3}
