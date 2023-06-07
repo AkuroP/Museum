@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/herebes musee vr project.unity
+  - enabled: 0
+    path: Assets/Scenes/(1).unity
     guid: 7daff14af9554be4db0119e016ef069f
   - enabled: 0
     path: Assets/Scenes/ui.unity
     guid: 621f53ae48098484591c8ff6d51a784d
+  - enabled: 1
+    path: Assets/Scenes/herebes musee vr project 1.unity
+    guid: 809dc69ec46809b44a7414c25441929e
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
