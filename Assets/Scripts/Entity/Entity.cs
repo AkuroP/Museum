@@ -73,6 +73,16 @@ public class Entity : MonoBehaviour
     public Player Player { get { return player;} set {  player = value;} }
     public NavMeshAgent Agent { get { return agent;} set {  agent = value;} }
 
+    public enum ENTITYTAG
+    {
+        YUCO,
+        DRAGON,
+        FENRIR,
+        KRAKEN
+    }
+
+    public ENTITYTAG entityTag;
+
     #endregion
 
     // Start is called before the first frame update
@@ -87,8 +97,8 @@ public class Entity : MonoBehaviour
         
     }
 
-    public void CurrentDialogAdvance()
+    /*public void CurrentDialogAdvance()
     {
         currentDialogAdvancement++;
-    }
+    }*/
 }
