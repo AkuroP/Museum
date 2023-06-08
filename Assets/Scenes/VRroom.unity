@@ -2711,12 +2711,13 @@ MonoBehaviour:
   qCanva: {fileID: 384202961}
   eggHUD: {fileID: 448768420}
   artifactHUD: {fileID: 2066155443}
-  questEggFinished: 1
+  questEggFinished: 0
   artifact1: 0
   FXegg: {fileID: 1589168001}
   FXscale: {fileID: 1523282050}
   actual: 0
-  entity: []
+  allEntity: []
+  questTag: 
 --- !u!4 &962975079
 Transform:
   m_ObjectHideFlags: 0
