@@ -5000,6 +5000,11 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 1164
       objectReference: {fileID: 0}
+    - target: {fileID: 6694862149070630428, guid: dc9ccf5d17f2c7d44a70a363cb8f1c71,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8012002375309190984, guid: dc9ccf5d17f2c7d44a70a363cb8f1c71,
         type: 3}
       propertyPath: m_InteractionManager

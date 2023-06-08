@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class DialogController : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class DialogController : MonoBehaviour
     public AudioSource _audioSource;
     [SerializeField] InputActionReference skipDialogInput;
     private InputAction nextDialog;
+
+    private Entity entityConcerned;
 
     private void OnEnable()
     {
@@ -35,6 +38,7 @@ public class DialogController : MonoBehaviour
     public void PlayDialog(Entity entity)
     {
         _dialog = entity.EntityDialog[entity.CurrentDialogAdvancement];
+        entityConcerned = entity;
         
         //stop time
         //Time.timeScale = 1f;
@@ -80,12 +84,14 @@ public class DialogController : MonoBehaviour
             case DialogConfig.SentenceConfig.CHARACTER.FIRSTCHAR:
                 _dialog.firstCharTxt.transform.parent.gameObject.SetActive(true);
                 _dialog.firstCharTxt.text = sentence.sentence;
-                if(sentence.dialogMat != null)_dialog.firstCharTxt.transform.parent.GetComponent<MeshRenderer>().material = sentence.dialogMat;
+                //Debug.Log(_dialog.firstCharTxt.transform.parent.name);
+                _dialog.firstCharTxt.transform.parent.GetComponent<Renderer>().material = sentence.dialogMat;
                 _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
             break;
             case DialogConfig.SentenceConfig.CHARACTER.SECONDCHAR:
                 _dialog.secondCharTxt.transform.parent.gameObject.SetActive(true);
                 _dialog.secondCharTxt.text = sentence.sentence;
+                _dialog.secondCharTxt.transform.parent.GetComponent<Renderer>().material = sentence.dialogMat;
                 _dialog.firstCharTxt.transform.parent.gameObject.SetActive(false);
                 break;
         }
@@ -117,6 +123,9 @@ public class DialogController : MonoBehaviour
         //reset dialog var and close gameobject
         _dialog.alreadyRead = true;
         //this.gameObject.SetActive(false);
+        if (_dialog.sentenceConfig[_idCurrentSentence].increment) entityConcerned.CurrentDialogAdvancement += 1;
+        entityConcerned = null;
+
         _dialog.firstCharTxt.transform.parent.gameObject.SetActive(false);
         _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
         _idCurrentSentence = 0;

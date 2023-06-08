@@ -27,6 +27,8 @@ public class DialogConfig : MonoBehaviour
 
         public Material dialogMat;
 
+        public bool increment;
+
         //public TextMeshPro txtChar;
     }
 
