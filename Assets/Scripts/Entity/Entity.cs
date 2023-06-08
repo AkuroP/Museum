@@ -53,8 +53,35 @@ public class Entity : MonoBehaviour
     protected Player player;
     protected NavMeshAgent agent;
 
+    [SerializeField]
+    protected DialogConfig[] entityDialog;
+
+    public DialogConfig[] EntityDialog
+    {
+        get { return entityDialog; }
+        set { entityDialog = value; }
+    }
+
+    [SerializeField]
+    private int currentDialogAdvancement;
+    public int CurrentDialogAdvancement
+    {
+        get { return currentDialogAdvancement; }
+        set { currentDialogAdvancement = value; }
+    }
+
     public Player Player { get { return player;} set {  player = value;} }
     public NavMeshAgent Agent { get { return agent;} set {  agent = value;} }
+
+    public enum ENTITYTAG
+    {
+        YUCO,
+        DRAGON,
+        FENRIR,
+        KRAKEN
+    }
+
+    public ENTITYTAG entityTag;
 
     #endregion
 
@@ -70,5 +97,8 @@ public class Entity : MonoBehaviour
         
     }
 
-    
+    /*public void CurrentDialogAdvance()
+    {
+        currentDialogAdvancement++;
+    }*/
 }

@@ -1,0 +1,221 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1668603174123950504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1668603174123950503}
+  - component: {fileID: 1668603174123950502}
+  m_Layer: 0
+  m_Name: Dialog_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1668603174123950503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668603174123950504}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1668603174402757138}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1668603174123950502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668603174123950504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aede5bae63bbf64db056969e3bda21f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameFirstChar: Yuco
+  nameSecondChar: Humain
+  firstCharTxt: {fileID: 0}
+  secondCharTxt: {fileID: 0}
+  alreadyRead: 0
+  sentenceConfig:
+  - sentence: "test du 2\xE8me text"
+    whoTalk: 0
+    sfx: {fileID: 0}
+    dialogMat: {fileID: 0}
+  - sentence: szqdezfregtrh
+    whoTalk: 1
+    sfx: {fileID: 0}
+    dialogMat: {fileID: 0}
+  - sentence: eeee
+    whoTalk: 0
+    sfx: {fileID: 0}
+    dialogMat: {fileID: 0}
+  - sentence: aaaaa
+    whoTalk: 1
+    sfx: {fileID: 0}
+    dialogMat: {fileID: 0}
+--- !u!1 &1668603174402757139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1668603174402757138}
+  m_Layer: 0
+  m_Name: ----ALL DIALOG----
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1668603174402757138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668603174402757139}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1668603175892660975}
+  - {fileID: 1668603174653940225}
+  - {fileID: 1668603174123950503}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1668603174653940227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1668603174653940225}
+  - component: {fileID: 1668603174653940226}
+  m_Layer: 0
+  m_Name: Dialog_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1668603174653940225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668603174653940227}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1668603174402757138}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1668603174653940226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668603174653940227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aede5bae63bbf64db056969e3bda21f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameFirstChar: Yuco
+  nameSecondChar: Humain
+  firstCharTxt: {fileID: 0}
+  secondCharTxt: {fileID: 0}
+  alreadyRead: 0
+  sentenceConfig:
+  - sentence: Bonjour, humain ! je suis <color=red>Yuco</color> et je viens faire
+      une conversation avec toi !
+    whoTalk: 0
+    sfx: {fileID: 0}
+    dialogMat: {fileID: 0}
+  - sentence: 'Bonjour Yuco ! Je suis un <color=#4FC86C>humain</color>.
+
+      J''ai
+      fui les CRS parce que je ne veux pas payer mes taxes haha'
+    whoTalk: 1
+    sfx: {fileID: 0}
+    dialogMat: {fileID: 0}
+  - sentence: VROUM VRRUMM YUCO DIT VROUM
+    whoTalk: 0
+    sfx: {fileID: 0}
+    dialogMat: {fileID: 0}
+  - sentence: HUMAIN DIT KEKEKKEK
+    whoTalk: 1
+    sfx: {fileID: 0}
+    dialogMat: {fileID: 0}
+--- !u!1 &1668603175892660977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1668603175892660975}
+  - component: {fileID: 1668603175892660976}
+  m_Layer: 0
+  m_Name: DialogController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1668603175892660975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668603175892660977}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1668603174402757138}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1668603175892660976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668603175892660977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca8fabf1b5d9ac40a9e28b04a480e0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _idCurrentSentence: 0
+  _dialog: {fileID: 1668603174653940226}
+  _audioSource: {fileID: 0}
+  skipDialogInput: {fileID: -8624930442846845475, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}

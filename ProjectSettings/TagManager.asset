@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hand
+  - FxTemporaire
+  - QuestManager
+  - NPC
   layers:
   - Default
   - TransparentFX
