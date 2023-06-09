@@ -87,7 +87,7 @@ public class DialogController : MonoBehaviour
                 _dialog.firstCharTxt.text = sentence.sentence;
                 //Debug.Log(_dialog.firstCharTxt.transform.parent.name);
                 _dialog.firstCharTxt.transform.parent.GetComponent<Renderer>().material = sentence.dialogMat;
-                _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
+                if (_dialog.secondCharTxt != null) _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
             break;
             case DialogConfig.SentenceConfig.CHARACTER.SECONDCHAR:
                 _dialog.secondCharTxt.transform.parent.gameObject.SetActive(true);
@@ -113,8 +113,17 @@ public class DialogController : MonoBehaviour
         if(_dialog == null)return;
         _idCurrentSentence++;
 
-        if(_idCurrentSentence < _dialog.sentenceConfig.Count)RefreshBox();
-        else CloseDialog();
+        if (_idCurrentSentence < _dialog.sentenceConfig.Count) RefreshBox();
+        else
+        {
+            if (_dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].increment)
+            {
+                entityConcerned.CurrentDialogAdvancement += 1;
+                Debug.Log("AJOUTED ZBI");
+            }
+            CloseDialog();
+        }
+
     }
 
     public void CloseDialog()
@@ -126,8 +135,7 @@ public class DialogController : MonoBehaviour
         //this.gameObject.SetActive(false);
 
         _dialog.firstCharTxt.transform.parent.gameObject.SetActive(false);
-        _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
-        if (_dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].increment) entityConcerned.CurrentDialogAdvancement += 1;
+        if(_dialog.secondCharTxt != null) _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
         _idCurrentSentence = 0;
         entityConcerned = null;
         _dialog = null;
