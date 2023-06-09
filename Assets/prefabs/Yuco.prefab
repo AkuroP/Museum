@@ -4414,7 +4414,7 @@ MonoBehaviour:
   entityDialog:
   - {fileID: 0}
   - {fileID: 0}
-  currentDialogAdvancement: 1
+  currentDialogAdvancement: 0
   entityTag: 0
 --- !u!195 &8108478895934746321
 NavMeshAgent:

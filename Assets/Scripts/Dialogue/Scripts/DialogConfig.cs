@@ -40,7 +40,7 @@ public class DialogConfig : MonoBehaviour
     public TextMeshPro firstCharTxt;
     public TextMeshPro secondCharTxt;
 
-    public bool alreadyRead;
+    public bool onDialog;
 
     /*public TextMeshPro txtFirstChar;
     public TextMeshPro txtSecondChar;*/

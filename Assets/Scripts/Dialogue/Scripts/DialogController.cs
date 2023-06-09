@@ -38,6 +38,7 @@ public class DialogController : MonoBehaviour
     public void PlayDialog(Entity entity)
     {
         _dialog = entity.EntityDialog[entity.CurrentDialogAdvancement];
+        if (_dialog.onDialog) return;
         entityConcerned = entity;
         
         //stop time
@@ -52,7 +53,7 @@ public class DialogController : MonoBehaviour
 
         txtNameRight.text = actualDialog.nameRight;
         imgSpriteRight.sprite = actualDialog.spriteRight;*/
-
+        _dialog.onDialog = true;
         RefreshBox();
     }
 
@@ -121,20 +122,20 @@ public class DialogController : MonoBehaviour
         //resume time
         //Time.timeScale = 0f;
         //reset dialog var and close gameobject
-        _dialog.alreadyRead = true;
+        _dialog.onDialog = false;
         //this.gameObject.SetActive(false);
-        if (_dialog.sentenceConfig[_idCurrentSentence].increment) entityConcerned.CurrentDialogAdvancement += 1;
-        entityConcerned = null;
 
         _dialog.firstCharTxt.transform.parent.gameObject.SetActive(false);
         _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
+        if (_dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].increment) entityConcerned.CurrentDialogAdvancement += 1;
         _idCurrentSentence = 0;
+        entityConcerned = null;
         _dialog = null;
     }
 
     public void NextDialog(InputAction.CallbackContext ctx)
     {
-        if(_dialog == null) return;
+        if(_dialog == null || !_dialog.onDialog) return;
         NextSentence();
 
     }
