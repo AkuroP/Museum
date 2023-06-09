@@ -68,7 +68,7 @@ public class QuestManager : MonoBehaviour
     {
         for (int i = 0; i < numberOfEggs; i++)
         {
-            Debug.Log(i);
+            //Debug.Log(i);
             if (spriteList[i].sprite == eggSprite)
             {
                 if (i + 1 == numberOfEggs)

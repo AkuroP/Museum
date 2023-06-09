@@ -86,13 +86,13 @@ public class DialogController : MonoBehaviour
                 _dialog.firstCharTxt.transform.parent.gameObject.SetActive(true);
                 _dialog.firstCharTxt.text = sentence.sentence;
                 //Debug.Log(_dialog.firstCharTxt.transform.parent.name);
-                _dialog.firstCharTxt.transform.parent.GetComponent<Renderer>().material = sentence.dialogMat;
+                if(sentence.dialogMat != null) _dialog.firstCharTxt.transform.parent.GetComponent<Renderer>().material = sentence.dialogMat;
                 if (_dialog.secondCharTxt != null) _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
             break;
             case DialogConfig.SentenceConfig.CHARACTER.SECONDCHAR:
                 _dialog.secondCharTxt.transform.parent.gameObject.SetActive(true);
-                _dialog.secondCharTxt.text = sentence.sentence;
-                _dialog.secondCharTxt.transform.parent.GetComponent<Renderer>().material = sentence.dialogMat;
+                if(sentence.dialogMat != null)_dialog.secondCharTxt.text = sentence.sentence;
+                if (sentence.dialogMat != null) _dialog.secondCharTxt.transform.parent.GetComponent<Renderer>().material = sentence.dialogMat;
                 _dialog.firstCharTxt.transform.parent.gameObject.SetActive(false);
                 break;
         }
