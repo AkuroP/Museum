@@ -43,11 +43,12 @@ public class QuestManager : MonoBehaviour
 
         //Prend tout les npc de la scene
         //les assignent dans allEntity
-        GameObject[] npc = GameObject.FindGameObjectsWithTag("NPC");
-        foreach (var entity in npc)
+        //GameObject[] npc = GameObject.FindGameObjectsWithTag("NPC");
+        //Debug.Log(npc.Length);
+        /*foreach (var entity in npc)
         {
             allEntity.Add(entity.GetComponent<Entity>());
-        }
+        }*/
     }
     void Update()
     {
@@ -67,10 +68,12 @@ public class QuestManager : MonoBehaviour
     {
         for (int i = 0; i < numberOfEggs; i++)
         {
+            //Debug.Log(i);
             if (spriteList[i].sprite == eggSprite)
             {
                 if (i + 1 == numberOfEggs)
                 {
+                    Debug.Log("YU");
                     questEggFinished = true;
                     FXtoPlay = FXegg;
                     actual = 0;

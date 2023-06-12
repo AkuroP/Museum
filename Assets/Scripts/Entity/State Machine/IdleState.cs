@@ -20,7 +20,7 @@ public class IdleState : EntityState
     public override void EnterState(Entity state)
     {
         //Debug.Log("Enter Idle State");
-        if(state.Agent.enabled)state.Agent.isStopped = true;
+        if(state.Agent != null && state.Agent.enabled)state.Agent.isStopped = true;
         entityRenderer = state.GetComponentInChildren<MeshRenderer>();
         timeChangeState = Random.Range(0, maxTimeChangeState);
     }
