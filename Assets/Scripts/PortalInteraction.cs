@@ -69,6 +69,8 @@ public class PortalInteraction : MonoBehaviour
     [SerializeField]
     private Material nextWorldSkyBoxMat;
 
+    private Player player;
+
     public void LOnRelease()
     {
         l_IsGrabbing = false;
@@ -95,6 +97,7 @@ public class PortalInteraction : MonoBehaviour
         rHand = Camera.main.transform.parent.GetChild(2);
         r_portalInitialPos = r_InterActualPos.transform.position;
         l_portalInitialPos = l_InterActualPos.transform.position;
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
 
     }
 
@@ -142,6 +145,7 @@ public class PortalInteraction : MonoBehaviour
         RenderSettings.skybox = nextWorldSkyBoxMat;
         r_InterActualPos.GetComponent<MeshRenderer>().enabled = true;
         l_InterActualPos.GetComponent<MeshRenderer>().enabled = true;
+        player.IsInDimension = !player.IsInDimension;
         centerPortal.Stop();
         startingWorld.SetActive(false);
         destinationWorld.SetActive(true);

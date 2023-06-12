@@ -15,6 +15,10 @@ public class Player : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     public NavMeshAgent NavMeshAgent { get { return navMeshAgent; } set { navMeshAgent = value; } }
 
+    [SerializeField]
+    private bool isInDimension = false;
+    public bool IsInDimension { get { return isInDimension; } set { isInDimension = value; } }
+
 
     private void Start()
     {

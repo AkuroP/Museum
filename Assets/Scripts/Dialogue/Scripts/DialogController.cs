@@ -20,6 +20,18 @@ public class DialogController : MonoBehaviour
 
     private Entity entityConcerned;
 
+    private Player player;
+
+    [SerializeField]
+    private Material normalMat;
+    [SerializeField]
+    private Material dimensionMat;
+
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+    }
+
     private void OnEnable()
     {
         //if(_dialog == null)return;
@@ -84,16 +96,24 @@ public class DialogController : MonoBehaviour
         {
             case DialogConfig.SentenceConfig.CHARACTER.FIRSTCHAR:
                 _dialog.firstCharTxt.transform.parent.gameObject.SetActive(true);
+                
                 _dialog.firstCharTxt.text = sentence.sentence;
+                if(player.IsInDimension)_dialog.firstCharTxt.transform.parent.GetComponent<Renderer>().material = dimensionMat;
+                else _dialog.firstCharTxt.transform.parent.GetComponent<Renderer>().material = normalMat;
                 //Debug.Log(_dialog.firstCharTxt.transform.parent.name);
-                if(sentence.dialogMat != null) _dialog.firstCharTxt.transform.parent.GetComponent<Renderer>().material = sentence.dialogMat;
+
                 if (_dialog.secondCharTxt != null) _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
             break;
             case DialogConfig.SentenceConfig.CHARACTER.SECONDCHAR:
                 _dialog.secondCharTxt.transform.parent.gameObject.SetActive(true);
-                if(sentence.dialogMat != null)_dialog.secondCharTxt.text = sentence.sentence;
-                if (sentence.dialogMat != null) _dialog.secondCharTxt.transform.parent.GetComponent<Renderer>().material = sentence.dialogMat;
-                _dialog.firstCharTxt.transform.parent.gameObject.SetActive(false);
+
+                _dialog.secondCharTxt.text = sentence.sentence;
+                if (player.IsInDimension) _dialog.secondCharTxt.transform.parent.GetComponent<Renderer>().material = normalMat;
+                else _dialog.secondCharTxt.transform.parent.GetComponent<Renderer>().material = dimensionMat;
+                
+
+                if(_dialog.firstCharTxt != null) _dialog.firstCharTxt.transform.parent.gameObject.SetActive(false);
+                
                 break;
         }
 

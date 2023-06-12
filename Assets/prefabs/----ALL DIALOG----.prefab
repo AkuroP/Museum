@@ -48,24 +48,24 @@ MonoBehaviour:
   nameSecondChar: Humain
   firstCharTxt: {fileID: 0}
   secondCharTxt: {fileID: 0}
-  alreadyRead: 0
+  onDialog: 0
   sentenceConfig:
   - sentence: "test du 2\xE8me text"
     whoTalk: 0
     sfx: {fileID: 0}
-    dialogMat: {fileID: 0}
+    increment: 0
   - sentence: szqdezfregtrh
     whoTalk: 1
     sfx: {fileID: 0}
-    dialogMat: {fileID: 0}
+    increment: 0
   - sentence: eeee
     whoTalk: 0
     sfx: {fileID: 0}
-    dialogMat: {fileID: 0}
+    increment: 0
   - sentence: aaaaa
     whoTalk: 1
     sfx: {fileID: 0}
-    dialogMat: {fileID: 0}
+    increment: 0
 --- !u!1 &1668603174402757139
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,28 +148,28 @@ MonoBehaviour:
   nameSecondChar: Humain
   firstCharTxt: {fileID: 0}
   secondCharTxt: {fileID: 0}
-  alreadyRead: 0
+  onDialog: 0
   sentenceConfig:
   - sentence: Bonjour, humain ! je suis <color=red>Yuco</color> et je viens faire
       une conversation avec toi !
     whoTalk: 0
     sfx: {fileID: 0}
-    dialogMat: {fileID: 2100000, guid: dedeeeaeff1280e4c833de19e5678c82, type: 2}
+    increment: 0
   - sentence: 'Bonjour Yuco ! Je suis un <color=#4FC86C>humain</color>.
 
       J''ai
       fui les CRS parce que je ne veux pas payer mes taxes haha'
     whoTalk: 1
     sfx: {fileID: 0}
-    dialogMat: {fileID: 2100000, guid: 1ee170cd0626d3847b753a22a77d0f55, type: 2}
+    increment: 0
   - sentence: VROUM VRRUMM YUCO DIT VROUM
     whoTalk: 0
     sfx: {fileID: 0}
-    dialogMat: {fileID: 2100000, guid: 1ee170cd0626d3847b753a22a77d0f55, type: 2}
+    increment: 0
   - sentence: HUMAIN DIT KEKEKKEK
     whoTalk: 1
     sfx: {fileID: 0}
-    dialogMat: {fileID: 2100000, guid: dedeeeaeff1280e4c833de19e5678c82, type: 2}
+    increment: 0
 --- !u!1 &1668603175892660977
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,3 +219,5 @@ MonoBehaviour:
   _audioSource: {fileID: 0}
   skipDialogInput: {fileID: -8624930442846845475, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
+  normalMat: {fileID: 2100000, guid: dedeeeaeff1280e4c833de19e5678c82, type: 2}
+  dimensionMat: {fileID: 2100000, guid: 1ee170cd0626d3847b753a22a77d0f55, type: 2}
