@@ -48,6 +48,9 @@ public class PortalInteraction : MonoBehaviour
     [SerializeField]
     private Vector3 portalTargetScale;
 
+    private Vector3 r_portalInitialPos;
+    private Vector3 l_portalInitialPos;
+
     [SerializeField]
     private Transform rHand;
     [SerializeField]
@@ -65,6 +68,7 @@ public class PortalInteraction : MonoBehaviour
     
     [SerializeField]
     private Material nextWorldSkyBoxMat;
+
     public void LOnRelease()
     {
         l_IsGrabbing = false;
@@ -87,8 +91,11 @@ public class PortalInteraction : MonoBehaviour
 
     private void Start()
     {
-        lHand = Camera.main.transform.parent.GetChild(1);        
-        rHand = Camera.main.transform.parent.GetChild(2);        
+        lHand = Camera.main.transform.parent.GetChild(1);
+        rHand = Camera.main.transform.parent.GetChild(2);
+        r_portalInitialPos = r_InterActualPos.transform.position;
+        l_portalInitialPos = l_InterActualPos.transform.position;
+
     }
 
     private void Update()
@@ -128,8 +135,6 @@ public class PortalInteraction : MonoBehaviour
     }
     public IEnumerator DimensionChange(float time)
     {
-        r_InterActualPos.transform.position = new Vector3(r_InterMinPos.transform.position.x + 0.01f, r_InterMinPos.transform.position.y, r_InterMinPos.transform.position.z + 0.01f);
-        l_InterActualPos.transform.position = new Vector3(l_InterMinPos.transform.position.x - 0.01f, l_InterMinPos.transform.position.y, l_InterMinPos.transform.position.z - 0.01f);
         r_InterActualPos.GetComponent<MeshRenderer>().enabled = false;
         l_InterActualPos.GetComponent<MeshRenderer>().enabled = false;
         portalOpen = true;
@@ -142,6 +147,10 @@ public class PortalInteraction : MonoBehaviour
         destinationWorld.SetActive(true);
         portalOpen = false;
         portal.localScale = portalInitialScale;
+        
+        //reset portal pos
+        r_InterActualPos.transform.position = r_portalInitialPos;
+        l_InterActualPos.transform.position = l_portalInitialPos;
     }
 
 }
