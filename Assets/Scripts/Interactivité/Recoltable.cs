@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Recoltable : MonoBehaviour
 {
     [SerializeField] InputActionProperty stacked;
-    [SerializeField] GameObject EggHud;
+    [SerializeField] GameObject questCanvas;
     [SerializeField] GameObject eggs;
     [SerializeField] Sprite oeufSprite;
     [SerializeField] string number;
@@ -35,7 +35,7 @@ public class Recoltable : MonoBehaviour
 
     public void Stacking()
     {
-        GameObject egg = EggHud.GetComponentInChildren<RectTransform>().Find(number).gameObject;
+        GameObject egg = questCanvas.GetComponentInChildren<RectTransform>().Find(number).gameObject;
         eggs = egg;
         gameObject.SetActive(false);
         eggs.GetComponent<Image>().sprite = oeufSprite;
