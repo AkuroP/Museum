@@ -12,7 +12,7 @@ public class ActiveMenu : MonoBehaviour
 
     void Update()
     {
-        if (gameObject.transform.eulerAngles.z >= 85f && gameObject.transform.eulerAngles.z <= 105f)
+        if (gameObject.transform.eulerAngles.z <= 276f && gameObject.transform.eulerAngles.z >= 252f)
         {
             panel.SetActive(true);
         }

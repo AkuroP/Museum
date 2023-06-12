@@ -10,7 +10,7 @@ namespace Broccoli.Builder {
 	/// <summary>
 	/// Gives methods to help create mesh segments using BranchSkin instances.
 	/// </summary>
-	public class WeldingMeshBuilder : IBranchMeshBuilder {
+	public class WeldingMeshBuilder : IBranchMeshBuilder { 
 		#region Class BranchInfo
 		/// <summary>
 		/// Class containing the information to process the mesh of a branch.
