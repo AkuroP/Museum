@@ -23,6 +23,8 @@ public class QuestManager : MonoBehaviour
     [Header("List of FX")]
     [SerializeField] ParticleSystem FXegg;
     [SerializeField] ParticleSystem FXscale;
+    [SerializeField] Animator endQuestAnim;
+    [SerializeField] GameObject anim;
 
     [Header("ActualQuest")]
     [SerializeField] int actual;
@@ -37,7 +39,7 @@ public class QuestManager : MonoBehaviour
     private void Start()
 
     {
-
+        endQuestAnim = anim.GetComponent<Animator>();
         actual = 1; // A enlever quand il y aura le trigger de la 1ere quest avec le dialogue du dragon
         spriteList = SpriteList(eggHUD);
 
@@ -116,9 +118,10 @@ public class QuestManager : MonoBehaviour
             eggHUD.SetActive(false);
             artifactHUD.SetActive(true);
             FXtoPlay = FXscale;
+            endQuestAnim.SetBool("FinishQuest", true);
 
             //avance dialogue des entites concerne
-            foreach(Entity npc in allEntity)
+            foreach (Entity npc in allEntity)
             {
                 foreach(Entity.ENTITYTAG qTag in questTag)
                 {
