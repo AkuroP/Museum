@@ -15,6 +15,7 @@ public class QuestManager : MonoBehaviour
     [SerializeField] GameObject qCanva;
     [SerializeField] GameObject eggHUD;
     [SerializeField] GameObject artifactHUD;
+    [SerializeField] GameObject allEggs;
 
     [Header("QuestListing")]
     [SerializeField] bool questEggFinished;
@@ -118,6 +119,7 @@ public class QuestManager : MonoBehaviour
             eggHUD.SetActive(false);
             artifactHUD.SetActive(true);
             FXtoPlay = FXscale;
+            allEggs.SetActive(false);
             endQuestAnim.SetBool("FinishQuest", true);
 
             //avance dialogue des entites concerne
