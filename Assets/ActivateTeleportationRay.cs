@@ -33,11 +33,11 @@ public class ActivateTeleportationRay : MonoBehaviour
 
         rightRay.SetActive(rightCancel.action.ReadValue<float>() < 0.1f && rightActivate.action.ReadValue<float>() > 0.1f);
 
-        if (primary.action.WasPressedThisFrame())
+        /*if (primary.action.WasPressedThisFrame())
         {
             Debug.Log("Primary");
             canTP = !canTP;
-        }
+        }*/
 
         if (!canTP)
         {
