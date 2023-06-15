@@ -15,6 +15,7 @@ public class Recoltable : MonoBehaviour
     [Space]
     [Header("Dialog")]
     //Phrase selon bon oeuf oupa
+    [SerializeField] bool playDialog;
     [SerializeField] DialogController dialogController;
     [SerializeField] Entity entity;
     [SerializeField] int idToGoIfPicked;
@@ -39,6 +40,7 @@ public class Recoltable : MonoBehaviour
             if (stacked.action.WasPressedThisFrame())
             {
                 Stacking();
+                if (!playDialog) return;
                 dialogController.ChangeIDDialogTo(idToGoIfPicked, returnToPreviousId, entity);
             }
         }
