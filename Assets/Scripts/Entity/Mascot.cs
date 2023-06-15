@@ -19,6 +19,7 @@ public class Mascot : Entity
         //entre en idle state
         CurrentState = IdleState;
 
+        if (dialogController != null) dialogController.PlayDialog(this);
         CurrentState.EnterState(this);
     }
 

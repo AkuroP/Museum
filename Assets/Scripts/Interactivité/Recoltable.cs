@@ -11,6 +11,17 @@ public class Recoltable : MonoBehaviour
     [SerializeField] GameObject eggs;
     [SerializeField] Sprite oeufSprite;
     [SerializeField] string number;
+
+    [Space]
+    [Header("Dialog")]
+    //Phrase selon bon oeuf oupa
+    [SerializeField] DialogController dialogController;
+    [SerializeField] Entity entity;
+    [SerializeField] int idToGoIfPicked;
+    [SerializeField] bool returnToPreviousId;
+    [Tooltip("retourne à ID precise si valeur positive")]
+    [SerializeField] int returnToSpecificId = -1;
+
     void Start()
     {
         
@@ -28,6 +39,7 @@ public class Recoltable : MonoBehaviour
             if (stacked.action.WasPressedThisFrame())
             {
                 Stacking();
+                dialogController.ChangeIDDialogTo(idToGoIfPicked, returnToPreviousId, entity);
             }
         }
         

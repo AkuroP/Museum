@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using static UnityEngine.EventSystems.EventTrigger;
+using System.Security.Permissions;
 
 public class DialogController : MonoBehaviour
 {
@@ -50,7 +51,12 @@ public class DialogController : MonoBehaviour
     public void PlayDialog(Entity entity)
     {
         _dialog = entity.EntityDialog[entity.CurrentDialogAdvancement];
-        if (_dialog.onDialog) return;
+        if (player.CurrentDialog != null)
+        {
+            CloseDialog();
+            player.CurrentDialog = null;
+        }
+
         entityConcerned = entity;
         
         //stop time
@@ -65,7 +71,6 @@ public class DialogController : MonoBehaviour
 
         txtNameRight.text = actualDialog.nameRight;
         imgSpriteRight.sprite = actualDialog.spriteRight;*/
-        _dialog.onDialog = true;
         RefreshBox();
     }
 
@@ -114,7 +119,28 @@ public class DialogController : MonoBehaviour
 
                 if(_dialog.firstCharTxt != null) _dialog.firstCharTxt.transform.parent.gameObject.SetActive(false);
                 
+        break;
+        }
+
+        if(sentence.animName.Length > 0)
+        {
+            switch(sentence.animType)
+            {
+                case DialogConfig.SentenceConfig.AnimType.FLOAT:
+                    sentence.animator.SetFloat(sentence.animName, sentence.floatValue);
                 break;
+
+                case DialogConfig.SentenceConfig.AnimType.INT:
+                    sentence.animator.SetInteger(sentence.animName, sentence.intValue);
+                break;
+
+                case DialogConfig.SentenceConfig.AnimType.BOOL:
+                    sentence.animator.SetBool(sentence.animName, sentence.boolValue);
+                break;
+                case DialogConfig.SentenceConfig.AnimType.TRIGGER:
+                    sentence.animator.SetTrigger(sentence.animName);
+                break;
+            }
         }
 
         //stop actual audio
@@ -132,40 +158,52 @@ public class DialogController : MonoBehaviour
     {
         if(_dialog == null)return;
         _idCurrentSentence++;
-
+        
         if (_idCurrentSentence < _dialog.sentenceConfig.Count) RefreshBox();
-        else
-        {
-            if (_dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].increment)
-            {
-                entityConcerned.CurrentDialogAdvancement += 1;
-                Debug.Log("AJOUTED ZBI");
-            }
-            CloseDialog();
-        }
+        else CloseDialog();
+
 
     }
 
     public void CloseDialog()
     {
+        foreach(Entity entity in _dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].entitiesConcerned)
+        {
+            if (_dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].increment)entity.CurrentDialogAdvancement = _dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].goToID - 1;
+        }
+
         //resume time
         //Time.timeScale = 0f;
         //reset dialog var and close gameobject
-        _dialog.onDialog = false;
         //this.gameObject.SetActive(false);
 
+        _idCurrentSentence = 0;
         _dialog.firstCharTxt.transform.parent.gameObject.SetActive(false);
         if(_dialog.secondCharTxt != null) _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
-        _idCurrentSentence = 0;
+        if(_dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].playNextDialog)
+        {
+            PlayDialog(entityConcerned);
+            return;
+        }
         entityConcerned = null;
         _dialog = null;
     }
 
     public void NextDialog(InputAction.CallbackContext ctx)
     {
-        if(_dialog == null || !_dialog.onDialog) return;
+        if(_dialog == null) return;
         NextSentence();
 
+    }
+
+    public void ChangeIDDialogTo(int idToGo, bool returnToPreviousId, Entity entity, int returnToSpecificId = -1)
+    {
+        int localID = entity.CurrentDialogAdvancement;
+
+        entity.CurrentDialogAdvancement = idToGo;
+        PlayDialog(entity);
+        if(returnToPreviousId)entity.CurrentDialogAdvancement = localID;
+        if (returnToSpecificId > -1) entity.CurrentDialogAdvancement = returnToSpecificId;
     }
 
 }

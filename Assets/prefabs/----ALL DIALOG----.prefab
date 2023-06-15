@@ -48,24 +48,110 @@ MonoBehaviour:
   nameSecondChar: Humain
   firstCharTxt: {fileID: 0}
   secondCharTxt: {fileID: 0}
-  onDialog: 0
   sentenceConfig:
-  - sentence: "test du 2\xE8me text"
+  - sentence: "Tu dois te demander o\xF9 nous sommes. Ici, c'est le monde onirique,
+      et moi, c'est Yuco. "
     whoTalk: 0
     sfx: {fileID: 0}
     increment: 0
-  - sentence: szqdezfregtrh
-    whoTalk: 1
-    sfx: {fileID: 0}
-    increment: 0
-  - sentence: eeee
+    tagIncrement: 
+    playNextDialog: 0
+    animator: {fileID: 0}
+    animName: 
+    animType: 0
+    floatValue: 0
+    intValue: 0
+    boolValue: 0
+  - sentence: "Tu dois pas voir d'animaux de mon esp\xE8ce tr\xE8s souvent, je suis
+      un l\xE9zard \xE0 collerette !"
     whoTalk: 0
     sfx: {fileID: 0}
     increment: 0
-  - sentence: aaaaa
-    whoTalk: 1
+    tagIncrement: 
+    playNextDialog: 0
+    animator: {fileID: 0}
+    animName: 
+    animType: 0
+    floatValue: 0
+    intValue: 0
+    boolValue: 0
+  - sentence: "J'\xE9tais moi-m\xEAme dans ton monde y'a pas 5min. Il y a actuellement
+      un probl\xE8me."
+    whoTalk: 0
     sfx: {fileID: 0}
     increment: 0
+    tagIncrement: 
+    playNextDialog: 0
+    animator: {fileID: 0}
+    animName: 
+    animType: 0
+    floatValue: 0
+    intValue: 0
+    boolValue: 0
+  - sentence: "Une faille entre nos deux mondes s'est cr\xE9\xE9e, et des anomalies
+      s'y sont form\xE9es."
+    whoTalk: 0
+    sfx: {fileID: 0}
+    increment: 0
+    tagIncrement: 
+    playNextDialog: 0
+    animator: {fileID: 0}
+    animName: 
+    animType: 0
+    floatValue: 0
+    intValue: 0
+    boolValue: 0
+  - sentence: Cette faille nous permettrait de changer de monde pour que tu rentres
+      chez toi,
+    whoTalk: 0
+    sfx: {fileID: 0}
+    increment: 0
+    tagIncrement: 
+    playNextDialog: 0
+    animator: {fileID: 0}
+    animName: 
+    animType: 0
+    floatValue: 0
+    intValue: 0
+    boolValue: 0
+  - sentence: "mais elle est instable et c'est extr\xEAmement dangereux d'y retourner
+      maintenant.."
+    whoTalk: 0
+    sfx: {fileID: 0}
+    increment: 0
+    tagIncrement: 
+    playNextDialog: 0
+    animator: {fileID: 0}
+    animName: 
+    animType: 0
+    floatValue: 0
+    intValue: 0
+    boolValue: 0
+  - sentence: Viens avec moi, il faut demander aux 3 anciens de nous aider.
+    whoTalk: 0
+    sfx: {fileID: 0}
+    increment: 0
+    tagIncrement: 
+    playNextDialog: 0
+    animator: {fileID: 0}
+    animName: 
+    animType: 0
+    floatValue: 0
+    intValue: 0
+    boolValue: 0
+  - sentence: Ils ne se montrent pas aux inconnus sauf avec moi. Viens, il y a une
+      carte des lieux.
+    whoTalk: 0
+    sfx: {fileID: 0}
+    increment: 1
+    tagIncrement: 00000000
+    playNextDialog: 0
+    animator: {fileID: 0}
+    animName: 
+    animType: 0
+    floatValue: 0
+    intValue: 0
+    boolValue: 0
 --- !u!1 &1668603174402757139
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,13 +234,20 @@ MonoBehaviour:
   nameSecondChar: Humain
   firstCharTxt: {fileID: 0}
   secondCharTxt: {fileID: 0}
-  onDialog: 0
   sentenceConfig:
   - sentence: Bonjour, humain ! je suis <color=red>Yuco</color> et je viens faire
       une conversation avec toi !
     whoTalk: 0
     sfx: {fileID: 0}
     increment: 0
+    tagIncrement: 
+    playNextDialog: 0
+    animator: {fileID: 0}
+    animName: 
+    animType: 0
+    floatValue: 0
+    intValue: 0
+    boolValue: 0
   - sentence: 'Bonjour Yuco ! Je suis un <color=#4FC86C>humain</color>.
 
       J''ai
@@ -162,14 +255,38 @@ MonoBehaviour:
     whoTalk: 1
     sfx: {fileID: 0}
     increment: 0
+    tagIncrement: 
+    playNextDialog: 0
+    animator: {fileID: 0}
+    animName: 
+    animType: 0
+    floatValue: 0
+    intValue: 0
+    boolValue: 0
   - sentence: VROUM VRRUMM YUCO DIT VROUM
     whoTalk: 0
     sfx: {fileID: 0}
     increment: 0
+    tagIncrement: 00000000
+    playNextDialog: 0
+    animator: {fileID: 0}
+    animName: 
+    animType: 0
+    floatValue: 0
+    intValue: 0
+    boolValue: 0
   - sentence: HUMAIN DIT KEKEKKEK
     whoTalk: 1
     sfx: {fileID: 0}
     increment: 0
+    tagIncrement: 
+    playNextDialog: 0
+    animator: {fileID: 0}
+    animName: 
+    animType: 0
+    floatValue: 0
+    intValue: 0
+    boolValue: 0
 --- !u!1 &1668603175892660977
 GameObject:
   m_ObjectHideFlags: 0
