@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     private bool isInDimension = false;
     public bool IsInDimension { get { return isInDimension; } set { isInDimension = value; } }
 
+    private DialogConfig currentDialog;
+    public DialogConfig CurrentDialog { get {  return currentDialog; } set {  currentDialog = value; } }
 
     private void Start()
     {

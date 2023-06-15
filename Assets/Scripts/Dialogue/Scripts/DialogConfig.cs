@@ -26,6 +26,29 @@ public class DialogConfig : MonoBehaviour
         public AudioClip sfx;
 
         public bool increment;
+        public int goToID;
+        public Entity[] entitiesConcerned;
+
+        public bool playNextDialog;
+
+        [Space]
+        [Header("Animation")]
+        public Animator animator;
+        public string animName;
+        public enum AnimType
+        {
+            FLOAT,
+            INT,
+            BOOL,
+            TRIGGER
+        }
+
+        public AnimType animType;
+
+        public float floatValue;
+        public int intValue;
+        public bool boolValue;
+
 
         //public TextMeshPro txtChar;
     }
@@ -37,8 +60,6 @@ public class DialogConfig : MonoBehaviour
 
     public TextMeshPro firstCharTxt;
     public TextMeshPro secondCharTxt;
-
-    public bool onDialog;
 
     /*public TextMeshPro txtFirstChar;
     public TextMeshPro txtSecondChar;*/

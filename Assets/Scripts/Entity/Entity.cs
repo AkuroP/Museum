@@ -54,6 +54,13 @@ public class Entity : MonoBehaviour
     protected NavMeshAgent agent;
 
     [SerializeField]
+    protected DialogController dialogController;
+    public DialogController DialogController
+    {
+        get { return dialogController; }
+        set { dialogController = value; }
+    }
+    [SerializeField]
     protected DialogConfig[] entityDialog;
 
     public DialogConfig[] EntityDialog
