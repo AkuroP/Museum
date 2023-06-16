@@ -23,6 +23,9 @@ public class Recoltable : MonoBehaviour
     [Tooltip("retourne à ID precise si valeur positive")]
     [SerializeField] int returnToSpecificId = -1;
 
+    [Header("FX")]
+    [SerializeField] ParticleSystem fxRecolte;
+
     void Start()
     {
         
@@ -39,6 +42,7 @@ public class Recoltable : MonoBehaviour
         {
             if (stacked.action.WasPressedThisFrame())
             {
+                fxRecolte.Play();
                 Stacking();
                 if (!playDialog) return;
                 dialogController.ChangeIDDialogTo(idToGoIfPicked, returnToPreviousId, entity);
