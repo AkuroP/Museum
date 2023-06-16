@@ -10,6 +10,7 @@ public class ActivateTeleportationRay : MonoBehaviour
     [SerializeField] GameObject leftRay;
     [SerializeField] GameObject rightRay;
 
+
     [SerializeField] InputActionProperty leftActivate;
     [SerializeField] InputActionProperty rightActivate;
 

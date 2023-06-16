@@ -38,6 +38,7 @@ public class IdleState : EntityState
     private void CheckPlayerDistance(Entity state)
     {
         if (!state.FollowState.FollowPlayer) return;
+
         if (Vector3.Distance(this.transform.position, state.Player.transform.position) > (state.Player.NavMeshAgent.radius + state.Agent.stoppingDistance + plusValueRange))
         {
             state.FollowState.FollowTarget = state.Player.transform;

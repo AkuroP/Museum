@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
 
     private DialogConfig currentDialog;
     public DialogConfig CurrentDialog { get {  return currentDialog; } set {  currentDialog = value; } }
-
+    
     private void Start()
     {
         navMeshAgent = this.GetComponent<NavMeshAgent>();

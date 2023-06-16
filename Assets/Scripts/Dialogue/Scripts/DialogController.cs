@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using static UnityEngine.EventSystems.EventTrigger;
 using System.Security.Permissions;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class DialogController : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class DialogController : MonoBehaviour
     private Material normalMat;
     [SerializeField]
     private Material dimensionMat;
+
+    [Header("Movements")]
+    [SerializeField] ActionBasedContinuousMoveProvider moveS;
 
     private void Start()
     {
@@ -54,6 +58,7 @@ public class DialogController : MonoBehaviour
         if (player.CurrentDialog != null)
         {
             CloseDialog();
+            moveS.moveSpeed = 5;
             player.CurrentDialog = null;
         }
 

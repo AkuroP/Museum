@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class QuestManager : MonoBehaviour
 {
@@ -9,10 +10,10 @@ public class QuestManager : MonoBehaviour
     [SerializeField] int numberOfEggs;
     [SerializeField] Sprite eggSprite;
     [SerializeField] ParticleSystem FXtoPlay;
+    [SerializeField] ActionBasedContinuousMoveProvider movements;
 
     [Header("HUD")]
     [SerializeField] List<Image> spriteList;
-    [SerializeField] GameObject qCanva;
     [SerializeField] GameObject eggHUD;
     [SerializeField] GameObject artifactHUD;
     [SerializeField] GameObject allEggs;
@@ -43,6 +44,7 @@ public class QuestManager : MonoBehaviour
         endQuestAnim = anim.GetComponent<Animator>();
         actual = 1; // A enlever quand il y aura le trigger de la 1ere quest avec le dialogue du dragon
         spriteList = SpriteList(eggHUD);
+        
 
         //Prend tout les npc de la scene
         //les assignent dans allEntity
@@ -121,7 +123,7 @@ public class QuestManager : MonoBehaviour
             FXtoPlay = FXscale;
             allEggs.SetActive(false);
             endQuestAnim.SetBool("FinishQuest", true);
-
+            movements.moveSpeed = 0;
             //avance dialogue des entites concerne
             foreach (Entity npc in allEntity)
             {
