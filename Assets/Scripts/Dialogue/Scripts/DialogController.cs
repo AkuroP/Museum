@@ -37,6 +37,11 @@ public class DialogController : MonoBehaviour
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
     }
 
+    private void Update()
+    {
+        moveS.moveSpeed = 5;
+    }
+
     private void OnEnable()
     {
         //if(_dialog == null)return;
@@ -57,8 +62,7 @@ public class DialogController : MonoBehaviour
         _dialog = entity.EntityDialog[entity.CurrentDialogAdvancement];
         if (player.CurrentDialog != null)
         {
-            CloseDialog();
-            moveS.moveSpeed = 5;
+            CloseDialog();           
             player.CurrentDialog = null;
         }
 
