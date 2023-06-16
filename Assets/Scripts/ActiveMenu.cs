@@ -14,14 +14,17 @@ public class ActiveMenu : MonoBehaviour
     void Update()
     {
         if (gameObject.transform.eulerAngles.z <= 276f && gameObject.transform.eulerAngles.z >= 230f)
-        {
             panel.SetActive(true);
-            fxMontre.SetActive(true);
+        else
+            panel.SetActive(false);
 
+        if (gameObject.transform.eulerAngles.z <= 300f && gameObject.transform.eulerAngles.z >= 205f)
+        {
+            fxMontre.SetActive(true);
         }
         else
         {
-            panel.SetActive(false);
+            
             fxMontre.SetActive(false);
         }
     }
