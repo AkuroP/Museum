@@ -24,6 +24,10 @@ public class AudioManagerEditor : Editor
     SerializedProperty minDistance3D;
     SerializedProperty maxDistance3D;
 
+    SerializedProperty soundEffectMixer;
+    SerializedProperty musicMixer;
+    SerializedProperty adaptativeMusicMixer;
+
 
     private void OnEnable()
     {
@@ -33,6 +37,10 @@ public class AudioManagerEditor : Editor
         maxFadeInTime = serializedObject.FindProperty("maxFadeInTime");
         maxFadeOutTime = serializedObject.FindProperty("maxFadeOutTime");
         audioList = serializedObject.FindProperty("audioList");
+
+        soundEffectMixer = serializedObject.FindProperty("soundEffectMixer");
+        musicMixer = serializedObject.FindProperty("ostMixer");
+        adaptativeMusicMixer = serializedObject.FindProperty("adaptativeOSTMixer");
 
         //3D
         spatialBlend = serializedObject.FindProperty("spatialBlend");
@@ -139,7 +147,13 @@ public class AudioManagerEditor : Editor
 
 
             EditorGUILayout.EndHorizontal();
-            
+
+            EditorGUILayout.BeginVertical("box");
+            EditorGUILayout.PropertyField(soundEffectMixer, new GUIContent("Sound Effect Mixer"));
+            EditorGUILayout.PropertyField(musicMixer, new GUIContent("Music Mixer"));
+            EditorGUILayout.PropertyField(adaptativeMusicMixer, new GUIContent("Adaptative Music Mixer"));
+            EditorGUILayout.EndVertical();
+
             EditorGUILayout.Space();
 
             

@@ -64,6 +64,9 @@ public class AudioAction : MonoBehaviour
     [SerializeField]
     private float maxDistance3D = 500f;
 
+    [SerializeField]
+    private bool deactivateObj;
+
 
     #region Trigger
     private void OnTriggerEnter2D(Collider2D collider)
@@ -76,7 +79,7 @@ public class AudioAction : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         if(collideType != CollideType.ENTERTRIGGER3D)return; 
-        if(!collider.CompareTag("Player"))return;
+        if(!collider.transform.CompareTag("Player"))return;
         AudioAct();
     }
 
@@ -168,6 +171,7 @@ public class AudioAction : MonoBehaviour
                 AudioManager.instance.ChangeMusic(musicName, AudioManager.instance.ostMixer, AudioManager.TransitionType.ADAPTATIVE, spatialBlend, dopplerLevel, spread, minDistance3D, maxDistance3D);
             break;
         }
+        if (deactivateObj) this.gameObject.SetActive(false);
     }
     #endregion
 }

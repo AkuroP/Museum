@@ -44,9 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbba0d3c3c5355645b708ca77094e303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectMixer: {fileID: 0}
-  ostMixer: {fileID: 0}
-  adaptativeOSTMixer: {fileID: 0}
+  soundEffectMixer: {fileID: -1878423432411375460, guid: be23d981eda4db44f8df09971c1d4377,
+    type: 2}
+  ostMixer: {fileID: 8649993292253617023, guid: be23d981eda4db44f8df09971c1d4377,
+    type: 2}
+  adaptativeOSTMixer: {fileID: -970848008389496120, guid: be23d981eda4db44f8df09971c1d4377,
+    type: 2}
   audioList:
   - audioName: OST_NormalLoop
     audio: {fileID: 8300000, guid: cd098bd19033c27489921409a56e98d9, type: 3}

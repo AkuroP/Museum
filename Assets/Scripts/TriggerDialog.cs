@@ -64,6 +64,13 @@ public class TriggerDialog : MonoBehaviour
         if (!other.CompareTag("Player")) return;
         if (interactionType != InteractionType.TRIGGER_ENTER) return;
         dialogController._dialog = dialogConcerned;
+        for(int i = 0; i < entity.EntityDialog.Length; i++)
+        {
+            if (entity.EntityDialog[i] == dialogConcerned) 
+            {
+                entity.CurrentDialogAdvancement = i;
+            }
+        }
         dialogController.PlayDialog(entity);
         this.gameObject.SetActive(false);
     }

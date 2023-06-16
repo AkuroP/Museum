@@ -25,7 +25,8 @@ public class AudioManager : MonoBehaviour
     [HideInInspector]
     public List<KeyValue> audioList = new List<KeyValue>();
     public Dictionary<string, AudioClip> allAudio = new Dictionary<string, AudioClip>();
-    
+
+    [SerializeField]
     private List<GameObject> playingSounds;
 
     private List<AudioSource> adaptativeSounds;
@@ -341,7 +342,7 @@ public class AudioManager : MonoBehaviour
     /*
         Cherche le son demandé dans les sons joués
     */
-    private GameObject SearchSound(string soundName)
+    public GameObject SearchSound(string soundName)
     {
         foreach(GameObject sound in playingSounds)
         {
