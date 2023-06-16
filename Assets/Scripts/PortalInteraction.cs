@@ -144,9 +144,9 @@ public class PortalInteraction : MonoBehaviour
         r_InterActualPos.GetComponent<MeshRenderer>().enabled = false;
         l_InterActualPos.GetComponent<MeshRenderer>().enabled = false;
         portalOpen = true;
-        yield return new WaitForSeconds(time - 1.5f);
+        yield return new WaitForSeconds(time - 1f);
         passePortailVFX.SetActive(true);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(.6f);
         RenderSettings.skybox = nextWorldSkyBoxMat;
         r_InterActualPos.GetComponent<MeshRenderer>().enabled = true;
         l_InterActualPos.GetComponent<MeshRenderer>().enabled = true;
@@ -160,7 +160,7 @@ public class PortalInteraction : MonoBehaviour
         //reset portal pos
         r_InterActualPos.transform.position = r_portalInitialPos;
         l_InterActualPos.transform.position = l_portalInitialPos;
-        
+        yield return new WaitForSecondsRealtime(.45f);
         passePortailVFX.SetActive(false);
     }
 
