@@ -35,12 +35,7 @@ public class DialogController : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
-    }
-
-    private void Update()
-    {
-        moveS.moveSpeed = 5;
-    }
+    } 
 
     private void OnEnable()
     {
@@ -187,6 +182,7 @@ public class DialogController : MonoBehaviour
         //this.gameObject.SetActive(false);
 
         _idCurrentSentence = 0;
+        moveS.moveSpeed = 5;
         _dialog.firstCharTxt.transform.parent.gameObject.SetActive(false);
         if(_dialog.secondCharTxt != null) _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
         if(_dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].playNextDialog)
