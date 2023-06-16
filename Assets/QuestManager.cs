@@ -11,6 +11,7 @@ public class QuestManager : MonoBehaviour
     [SerializeField] Sprite eggSprite;
     [SerializeField] ParticleSystem FXtoPlay;
     [SerializeField] ActionBasedContinuousMoveProvider movements;
+    [SerializeField] GameObject animEcaille;
 
     [Header("HUD")]
     [SerializeField] List<Image> spriteList;
@@ -135,6 +136,14 @@ public class QuestManager : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    public void PlaceArtifact()
+    {
+        if (artifact1)
+        {
+            animEcaille.SetActive(true);
         }
     }
 }
