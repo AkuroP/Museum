@@ -15,10 +15,10 @@ MonoBehaviour:
   _waterMaxVisibility: 3
   _absorptionRamp:
     serializedVersion: 2
-    key0: {r: 0, g: 0.6525483, b: 1, a: 1}
-    key1: {r: 0, g: 0.674744, b: 0.7176471, a: 1}
-    key2: {r: 0, g: 0.060962003, b: 0.9529412, a: 0}
-    key3: {r: 0, g: 0.12477704, b: 0.8117647, a: 0}
+    key0: {r: 0, g: 0.84148407, b: 1, a: 1}
+    key1: {r: 0, g: 0.5670563, b: 0.7176471, a: 1}
+    key2: {r: 0, g: 0.21746296, b: 0.9529412, a: 0}
+    key3: {r: 0.18745877, g: 0, b: 0.8117647, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
@@ -28,7 +28,7 @@ MonoBehaviour:
     ctime2: 20817
     ctime3: 43581
     ctime4: 65535
-    ctime5: 0
+    ctime5: 65535
     ctime6: 0
     ctime7: 0
     atime0: 0
@@ -45,10 +45,10 @@ MonoBehaviour:
   _scatterRamp:
     serializedVersion: 2
     key0: {r: 0, g: 0, b: 0, a: 1}
-    key1: {r: 0.30259877, g: 0.52213126, b: 0.5660378, a: 1}
-    key2: {r: 0.3336003, g: 0.4186421, b: 0.6132076, a: 0}
-    key3: {r: 0.18114388, g: 0.5600033, b: 0.8113208, a: 0}
-    key4: {r: 0.19571698, g: 0.3647036, b: 0.45099998, a: 0}
+    key1: {r: 0.3019608, g: 0.33033985, b: 0.5647059, a: 1}
+    key2: {r: 0.33333334, g: 0.54436517, b: 0.6117647, a: 0}
+    key3: {r: 0.18039215, g: 0.66616154, b: 0.8117647, a: 0}
+    key4: {r: 0.73174846, g: 0.18039215, b: 0.8117647, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
@@ -56,7 +56,7 @@ MonoBehaviour:
     ctime1: 3277
     ctime2: 24672
     ctime3: 52043
-    ctime4: 63029
+    ctime4: 52043
     ctime5: 0
     ctime6: 0
     ctime7: 0
@@ -118,9 +118,9 @@ MonoBehaviour:
   randomSeed: 908
   _basicWaveSettings:
     numWaves: 10
-    amplitude: 1.5
+    amplitude: 0.1
     direction: -180
-    wavelength: 22
+    wavelength: 62
   _foamSettings:
     foamType: 1
     basicFoam:
