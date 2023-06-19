@@ -35,10 +35,10 @@ public class FollowState : EntityState
 
         //Debug.Log("1 : " + Vector3.Distance(this.transform.position, state.Player.transform.position));
         //Debug.Log("2 : " + state.Player.NavMeshAgent.radius + state.Agent.stoppingDistance);
-        
-        if (followPlayer && Vector3.Distance(this.transform.position, state.Player.transform.position) <= (state.Player.NavMeshAgent.radius + state.Agent.stoppingDistance))
+
+        if (followPlayer && state.Agent.remainingDistance <= .5f)
         {
-            Debug.Log("STPOP");
+            
             entityStateMachine.ChangeState(state.IdleState);
         }
     }

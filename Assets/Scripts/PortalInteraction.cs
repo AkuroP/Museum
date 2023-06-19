@@ -1,4 +1,4 @@
-using SerializableCallback;
+//using SerializableCallback;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -162,7 +162,6 @@ public class PortalInteraction : MonoBehaviour
         r_InterActualPos.GetComponent<MeshRenderer>().enabled = false;
         l_InterActualPos.GetComponent<MeshRenderer>().enabled = false;
         portalOpen = true;
-        AudioManager.instance.ChangeMusic("OST_OniriqueV3Loop", AudioManager.instance.ostMixer, AudioManager.TransitionType.FADE);
         openPortail.Play();
         yield return new WaitForSeconds(time - 1f);
         passePortailVFX.SetActive(true);
@@ -171,11 +170,11 @@ public class PortalInteraction : MonoBehaviour
         RenderSettings.skybox = nextWorldSkyBoxMat;
         r_InterActualPos.GetComponent<MeshRenderer>().enabled = true;
         l_InterActualPos.GetComponent<MeshRenderer>().enabled = true;
+        
+        if(player.IsInDimension) AudioManager.instance.ChangeMusic("OST_NormalLoop", AudioManager.instance.ostMixer, AudioManager.TransitionType.FADE);
+        else AudioManager.instance.ChangeMusic("OST_OniriqueV3Loop", AudioManager.instance.ostMixer, AudioManager.TransitionType.FADE);
         player.IsInDimension = !player.IsInDimension;
 
-        if(player.IsInDimension)
-        {
-        }
         centerPortal.Stop();
         startingWorld.SetActive(false);
         destinationWorld.SetActive(true);

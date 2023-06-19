@@ -11,7 +11,7 @@ public class IdleState : EntityState
     [SerializeField]
     private float maxTimeChangeState;
     [SerializeField]
-    private float plusValueRange;
+    private float restartFollowDistance;
 
     private float timeChangeState;
 
@@ -39,7 +39,7 @@ public class IdleState : EntityState
     {
         if (!state.FollowState.FollowPlayer) return;
 
-        if (Vector3.Distance(this.transform.position, state.Player.transform.position) > (state.Player.NavMeshAgent.radius + state.Agent.stoppingDistance + plusValueRange))
+        if (Vector3.Distance(this.transform.position, state.Player.transform.position) > restartFollowDistance + state.Agent.stoppingDistance)
         {
             state.FollowState.FollowTarget = state.Player.transform;
             entityStateMachine.ChangeState(state.FollowState);

@@ -12,8 +12,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
 
-    private NavMeshAgent navMeshAgent;
-    public NavMeshAgent NavMeshAgent { get { return navMeshAgent; } set { navMeshAgent = value; } }
+    private NavMeshObstacle navMeshObstacle;
+    public NavMeshObstacle NavMeshObstacle { get { return navMeshObstacle; } set { navMeshObstacle = value; } }
 
     [SerializeField]
     private bool isInDimension = false;
@@ -21,10 +21,11 @@ public class Player : MonoBehaviour
 
     private DialogConfig currentDialog;
     public DialogConfig CurrentDialog { get {  return currentDialog; } set {  currentDialog = value; } }
+    public Transform followDestination;
     
     private void Start()
     {
-        navMeshAgent = this.GetComponent<NavMeshAgent>();
+        navMeshObstacle = this.GetComponent<NavMeshObstacle>();
         AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["OST_NormalLoop"], this.transform.position, AudioManager.instance.ostMixer, false, true);
     }
 
