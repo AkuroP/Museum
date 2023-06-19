@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
 #if UNITY_EDITOR
@@ -28,12 +29,15 @@ public class AudioManagerEditor : Editor
     SerializedProperty musicMixer;
     SerializedProperty adaptativeMusicMixer;
 
+    SerializedProperty playingSounds;
+    SerializedProperty adaptativeSounds;
 
     private void OnEnable()
     {
         _source = target as AudioManager;
 
 
+        //music
         maxFadeInTime = serializedObject.FindProperty("maxFadeInTime");
         maxFadeOutTime = serializedObject.FindProperty("maxFadeOutTime");
         audioList = serializedObject.FindProperty("audioList");
@@ -42,12 +46,16 @@ public class AudioManagerEditor : Editor
         musicMixer = serializedObject.FindProperty("ostMixer");
         adaptativeMusicMixer = serializedObject.FindProperty("adaptativeOSTMixer");
 
+        playingSounds = serializedObject.FindProperty("playingSounds");
+        adaptativeSounds = serializedObject.FindProperty("adaptativeSounds");
+
         //3D
         spatialBlend = serializedObject.FindProperty("spatialBlend");
         dopplerLevel = serializedObject.FindProperty("dopplerLevel");
         spread = serializedObject.FindProperty("spread");
         minDistance3D = serializedObject.FindProperty("minDistance3D");
         maxDistance3D = serializedObject.FindProperty("maxDistance3D");
+
 
 
         /*allAudioName.Clear();
@@ -168,26 +176,33 @@ public class AudioManagerEditor : Editor
 
             EditorGUILayout.BeginVertical();
             EditorGUILayout.LabelField("Doppler Level", _titleStyle);
-            //EditorGUILayout.FloatField(_source.maxFadeInTime);
             EditorGUILayout.PropertyField(dopplerLevel, new GUIContent());
             EditorGUILayout.EndVertical();
 
             EditorGUILayout.BeginVertical();
             EditorGUILayout.LabelField("Spread", _titleStyle);
-            //EditorGUILayout.FloatField(_source.maxFadeInTime);
             EditorGUILayout.PropertyField(spread, new GUIContent());
             EditorGUILayout.EndVertical();
 
             EditorGUILayout.BeginVertical();
             EditorGUILayout.LabelField("Min Distance 3D", _titleStyle);
-            //EditorGUILayout.FloatField(_source.maxFadeInTime);
             EditorGUILayout.PropertyField(minDistance3D, new GUIContent());
             EditorGUILayout.EndVertical();
 
             EditorGUILayout.BeginVertical();
             EditorGUILayout.LabelField("Max Distance 3D", _titleStyle);
-            //EditorGUILayout.FloatField(_source.maxFadeInTime);
             EditorGUILayout.PropertyField(maxDistance3D, new GUIContent());
+            EditorGUILayout.EndVertical();
+
+
+            EditorGUILayout.BeginVertical();
+            EditorGUILayout.LabelField("Playing Sounds", _titleStyle);
+            EditorGUILayout.PropertyField(playingSounds, new GUIContent());
+            EditorGUILayout.EndVertical();
+            
+            EditorGUILayout.BeginVertical();
+            EditorGUILayout.LabelField("Adaptative Sounds", _titleStyle);
+            EditorGUILayout.PropertyField(adaptativeSounds, new GUIContent());
             EditorGUILayout.EndVertical();
 
         }

@@ -1,8 +1,12 @@
+using SerializableCallback;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
+using UnityEngine.ProBuilder.MeshOperations;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -74,6 +78,11 @@ public class PortalInteraction : MonoBehaviour
     [SerializeField]
     private GameObject passePortailVFX;
 
+    [SerializeField]
+    private AudioSource openPortail;
+
+    private bool openingPortalFX;
+
     public void LOnRelease()
     {
         l_IsGrabbing = false;
@@ -81,6 +90,8 @@ public class PortalInteraction : MonoBehaviour
 
     public void LOnGrab()
     {
+        
+        if(!l_IsGrabbing) AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["SFX_GrabPortal"], this.transform.position, AudioManager.instance.soundEffectMixer, true, false, 1f, 1f, 360f, 1f, 10f);
         l_IsGrabbing = true;
     }
 
@@ -91,6 +102,7 @@ public class PortalInteraction : MonoBehaviour
 
     public void ROnGrab()
     {
+        if (!r_IsGrabbing) AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["SFX_GrabPortal"], this.transform.position, AudioManager.instance.soundEffectMixer, true, false, 1f, 1f, 360f, 1f, 10f);
         r_IsGrabbing = true;
     }
 
@@ -102,6 +114,8 @@ public class PortalInteraction : MonoBehaviour
         l_portalInitialPos = l_InterActualPos.transform.position;
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
 
+        
+       openPortail = this.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -127,36 +141,50 @@ public class PortalInteraction : MonoBehaviour
 
     private void Open_Portal()
     {
-        if (!r_IsGrabbing || !l_IsGrabbing) return;
+        if (!r_IsGrabbing || !l_IsGrabbing)return;
+        
         if (portalOpen) return;
 
-        if(portal.localScale.x >= portalTargetScale.x)
+        if (portal.localScale.x >= portalTargetScale.x)
         {
             centerPortal.Play();
             StartCoroutine(DimensionChange(5f));
             return;
         }
         else portal.localScale = new Vector3(Vector3.Distance(r_InterMinPos.transform.position, r_InterActualPos.transform.position) * this.transform.localScale.x, portal.localScale.y, portal.localScale.z);
+            
+
+
         
-    }
+    }   
     public IEnumerator DimensionChange(float time)
     {
         r_InterActualPos.GetComponent<MeshRenderer>().enabled = false;
         l_InterActualPos.GetComponent<MeshRenderer>().enabled = false;
         portalOpen = true;
+        AudioManager.instance.ChangeMusic("OST_OniriqueV3Loop", AudioManager.instance.ostMixer, AudioManager.TransitionType.FADE);
+        openPortail.Play();
         yield return new WaitForSeconds(time - 1f);
         passePortailVFX.SetActive(true);
+        AudioSource passePortailSFX = AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["SFX_PortalOpen"], this.transform.position, AudioManager.instance.soundEffectMixer, true, false, 1f, 1f, 360f, 1f, 10f);
         yield return new WaitForSeconds(.6f);
         RenderSettings.skybox = nextWorldSkyBoxMat;
         r_InterActualPos.GetComponent<MeshRenderer>().enabled = true;
         l_InterActualPos.GetComponent<MeshRenderer>().enabled = true;
         player.IsInDimension = !player.IsInDimension;
+
+        if(player.IsInDimension)
+        {
+        }
         centerPortal.Stop();
         startingWorld.SetActive(false);
         destinationWorld.SetActive(true);
         portalOpen = false;
         portal.localScale = portalInitialScale;
-        
+
+        openPortail.Stop();
+        openingPortalFX = false;
+
         //reset portal pos
         r_InterActualPos.transform.position = r_portalInitialPos;
         l_InterActualPos.transform.position = l_portalInitialPos;

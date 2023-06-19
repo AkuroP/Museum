@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         navMeshAgent = this.GetComponent<NavMeshAgent>();
+        AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["OST_NormalLoop"], this.transform.position, AudioManager.instance.ostMixer, false, true);
     }
 
     // Update is called once per frame

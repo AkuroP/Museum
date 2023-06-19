@@ -29,8 +29,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> playingSounds;
 
+    [SerializeField]
     private List<AudioSource> adaptativeSounds;
 
+    [SerializeField]
     private List<string> audioCoroutines;
 
     public float maxFadeInTime = 2f;
@@ -90,7 +92,7 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    public AudioSource PlayClipAt(AudioClip clip, Vector3 pos, AudioMixerGroup whatMixer, bool isSFX, bool islooping, float blendSpatial, float doppler, float spreadValue, float minDistance, float maxDistance)
+    public AudioSource PlayClipAt(AudioClip clip, Vector3 pos, AudioMixerGroup whatMixer, bool isSFX, bool islooping, float blendSpatial = 0f, float doppler = 1f, float spreadValue = 0, float minDistance = 1f, float maxDistance = 500f)
     {
         //Create GameObject
         GameObject tempGO = new GameObject("TempAudio");
@@ -140,7 +142,7 @@ public class AudioManager : MonoBehaviour
     /*
         Change la musique selon le type de transition
     */
-    public void ChangeMusic(string nextMusic, AudioMixerGroup musicMixer, TransitionType transitionType, float blendSpatial, float doppler, float spreadValue, float minDistance, float maxDistance)
+    public void ChangeMusic(string nextMusic, AudioMixerGroup musicMixer, TransitionType transitionType, float blendSpatial = 0f, float doppler = 1f, float spreadValue = 0f, float minDistance = 1f, float maxDistance = 500f)
     {
         switch(transitionType)
         {
@@ -240,7 +242,7 @@ public class AudioManager : MonoBehaviour
         float elapsedTime = 0f;
         float volumeOST;
         musicMixer.audioMixer.GetFloat("VolumeOST", out volumeOST);
-        Debug.Log(ui);
+        //Debug.Log(ui);
         while(true)
         {
             if(fadeOutTime <= 0f)
