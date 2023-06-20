@@ -91,8 +91,26 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: a2f964dae7f1bb844b3c45667f154d91, type: 3}
   - audioName: SFX_ClostText
     audio: {fileID: 8300000, guid: 5dad357536066b641a1a0e76c5e16e83, type: 3}
-  - audioName: 
+  - audioName: SFX_SkipText
     audio: {fileID: 8300000, guid: 7d407b9326f13a246a7abbcb681d56fb, type: 3}
+  - audioName: YucoVoice1
+    audio: {fileID: 8300000, guid: 88cb39e3cb3f9594190583db6cb23a86, type: 3}
+  - audioName: YucoVoice2
+    audio: {fileID: 8300000, guid: 4b4641a65fa6be24d9dfdd7d73c22fba, type: 3}
+  - audioName: YucoVoice3
+    audio: {fileID: 8300000, guid: e0d4a3d30b338f54c829c4982f6d1a5d, type: 3}
+  - audioName: DragonVoice1
+    audio: {fileID: 8300000, guid: 4f70a175d6445f448b74844ec7446e87, type: 3}
+  - audioName: DragonVoice2
+    audio: {fileID: 8300000, guid: 83bf48b947d1b9944a12b70dfc8cf79c, type: 3}
+  - audioName: DragonVoice3
+    audio: {fileID: 8300000, guid: 12c6793f1f9c7ad45bfb2b80940ee8eb, type: 3}
+  - audioName: YucoVoiceGrotte1
+    audio: {fileID: 8300000, guid: 5f8187ec26a20634aa62fa605895efd6, type: 3}
+  - audioName: YucoVoiceGrotte2
+    audio: {fileID: 8300000, guid: 94ee7890b2d3c6b4fa8296359c0bf6e8, type: 3}
+  - audioName: YucoVoiceGrotte3
+    audio: {fileID: 8300000, guid: ef94e6e24a620124da31d5036b30acac, type: 3}
   playingSounds: []
   adaptativeSounds: []
   audioCoroutines: []

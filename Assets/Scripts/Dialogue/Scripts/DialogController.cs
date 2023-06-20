@@ -35,6 +35,7 @@ public class DialogController : MonoBehaviour
 
     [SerializeField]
     private bool canTalk;
+    private bool onTalk;
 
     private void Start()
     {
@@ -64,7 +65,7 @@ public class DialogController : MonoBehaviour
     public void PointerClearEntity()
     {
         canTalk = false;
-        entityConcerned = null;
+        if(!onTalk)entityConcerned = null;
     }
 
     public void VRPlayDialog()
@@ -76,6 +77,7 @@ public class DialogController : MonoBehaviour
 
     public void PlayDialog(Entity entity)
     {
+        onTalk = true;
         if (entity == null) return;
         _dialog = entity.EntityDialog[entity.CurrentDialogAdvancement];
         if (player.CurrentDialog == null) return;
@@ -170,15 +172,10 @@ public class DialogController : MonoBehaviour
         }
 
         //stop actual audio
-        if(_audioSource == null)return;
         if (sentence.sfx == null) return;
-        if(_audioSource.clip != null)_audioSource.Stop();
-
-        //set next audio
-        _audioSource.clip = sentence.sfx;
-        
-        //play next audio
-        _audioSource.Play();
+       
+        AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio[sentence.sfx.name], entityConcerned.transform.position, AudioManager.instance.soundEffectMixer, true, false, 1, 1, 360, 1, 10f);
+        //Debug.Log("YYE");
     }
 
     public void NextSentence()
@@ -194,7 +191,8 @@ public class DialogController : MonoBehaviour
 
     public void CloseDialog()
     {
-        foreach(DialogConfig.SentenceConfig.DialogEntitiesConcerned entity in _dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].entities)
+        onTalk = false;
+        foreach (DialogConfig.SentenceConfig.DialogEntitiesConcerned entity in _dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].entities)
         {
             if (_dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].increment)entity.entity.CurrentDialogAdvancement = entity.entitiesGoToID - 1;
         }
@@ -204,7 +202,6 @@ public class DialogController : MonoBehaviour
         //reset dialog var and close gameobject
         //this.gameObject.SetActive(false);
 
-        _idCurrentSentence = 0;
         moveS.moveSpeed = 5;
         _dialog.firstCharTxt.transform.parent.gameObject.SetActive(false);
         if(_dialog.secondCharTxt != null) _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
@@ -213,18 +210,19 @@ public class DialogController : MonoBehaviour
             PlayDialog(entityConcerned);
             return;
         }
+        _idCurrentSentence = 0;
         entityConcerned = null;
         _dialog = null;
     }
 
     public void NextDialog(InputAction.CallbackContext ctx)
     {
-        if (_dialog == null && canTalk)
+        if (_dialog == null && canTalk && !onTalk)
         {
             VRPlayDialog();
             return;
         }
-        else if(_dialog == null && !canTalk) return;
+        else if(_dialog == null && !canTalk && onTalk) return;
         NextSentence();
 
     }
