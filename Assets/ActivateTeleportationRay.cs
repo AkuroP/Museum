@@ -49,8 +49,10 @@ public class ActivateTeleportationRay : MonoBehaviour
         {
             LeftTP.enabled = true;
             RightTP.enabled = true;
+
         }
-           
+            if(leftActivate.action.WasReleasedThisFrame())AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["SFX_PasGrotteTP"], this.transform.position, AudioManager.instance.soundEffectMixer, true, false, 1, 1, 360, 1, 10);
+
     }
 }
 

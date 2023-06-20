@@ -21,12 +21,12 @@ public class WanderingState : EntityState
     public override void EnterState(Entity state)
     {
         //Debug.Log("Enter Idle State");
-        state.Agent.enabled = true;
+        state.agent.enabled = true;
 
         entityRenderer = state.GetComponentInChildren<MeshRenderer>();
-        state.Agent.isStopped = false;
+        state.agent.isStopped = false;
         Vector3 newPos = RandomNavSphere(wanderZone.position, entityRange, -1);
-        state.Agent.SetDestination(newPos);
+        state.agent.SetDestination(newPos);
     }
 
     public override void UpdateState(Entity state)
@@ -38,7 +38,7 @@ public class WanderingState : EntityState
         }
         else
         {
-            state.Anim.SetFloat("Speed", state.Agent.speed);
+            if(state.Anim != null) state.Anim.SetFloat("Speed", state.agent.speed);
             timer += Time.deltaTime;
 
         }
@@ -46,8 +46,8 @@ public class WanderingState : EntityState
 
     public override void ExitState(Entity state)
     {
-        state.Agent.isStopped = true;
-        state.Agent.enabled = false;
+        state.agent.isStopped = true;
+        state.agent.enabled = false;
         //Debug.Log(state.Agent.destination);
         //Debug.Log("Exit Idle State");
     }

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.VFX;
+using UnityEngine.UI;
+using JetBrains.Annotations;
+using UnityEngine.Rendering;
+
 
 public class Player : MonoBehaviour
 {
@@ -22,7 +26,14 @@ public class Player : MonoBehaviour
     private DialogConfig currentDialog;
     public DialogConfig CurrentDialog { get {  return currentDialog; } set {  currentDialog = value; } }
     public Transform followDestination;
-    
+
+    public Sprite montreMapNorm;
+    public Sprite montreMapOni;
+
+    public Image montreMap;
+
+    UnityEngine.XR.Interaction.Toolkit.TeleportationProvider yes;
+
     private void Start()
     {
         navMeshObstacle = this.GetComponent<NavMeshObstacle>();

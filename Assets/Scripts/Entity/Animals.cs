@@ -11,7 +11,7 @@ public class Animals : Entity
     {
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         //Debug.Log(player.name);
-        agent = this.GetComponent<NavMeshAgent>();
+        if(agent == null)agent = this.GetComponent<NavMeshAgent>();
         if(IdleState != null)IdleState.entityStateMachine = this.GetComponent<EntityStateMachine>();
         if (FollowState != null) FollowState.entityStateMachine = this.GetComponent<EntityStateMachine>();
         if (WanderState != null) WanderState.entityStateMachine = this.GetComponent<EntityStateMachine>();

@@ -170,9 +170,18 @@ public class PortalInteraction : MonoBehaviour
         RenderSettings.skybox = nextWorldSkyBoxMat;
         r_InterActualPos.GetComponent<MeshRenderer>().enabled = true;
         l_InterActualPos.GetComponent<MeshRenderer>().enabled = true;
-        
-        if(player.IsInDimension) AudioManager.instance.ChangeMusic("OST_NormalLoop", AudioManager.instance.ostMixer, AudioManager.TransitionType.FADE);
-        else AudioManager.instance.ChangeMusic("OST_OniriqueV3Loop", AudioManager.instance.ostMixer, AudioManager.TransitionType.FADE);
+
+        if (player.IsInDimension)
+        {
+            AudioManager.instance.ChangeMusic("OST_NormalLoop", AudioManager.instance.ostMixer, AudioManager.TransitionType.FADE);
+            player.montreMap.sprite = player.montreMapNorm;
+        }
+        else
+        {
+            AudioManager.instance.ChangeMusic("OST_OniriqueV3Loop", AudioManager.instance.ostMixer, AudioManager.TransitionType.FADE);
+            player.montreMap.sprite = player.montreMapOni;
+        }
+
         player.IsInDimension = !player.IsInDimension;
 
         centerPortal.Stop();

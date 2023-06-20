@@ -429,14 +429,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.69411767}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 47298a64e8b8fce41999e26cdf1b379b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6ea4ea605bcb01b45b5b5d67eea1ba0a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1146,6 +1146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 6533736767873449843}
+  panelOnirique: {fileID: 0}
   fxMontre: {fileID: 671225352199042913}
 --- !u!1 &6533736767353955160
 GameObject:
@@ -1276,8 +1277,8 @@ GameObject:
   - component: {fileID: 6533736767711273092}
   - component: {fileID: 6533736767711273097}
   - component: {fileID: 6533736767711273096}
-  - component: {fileID: 6533736767711273102}
   - component: {fileID: 6533736767711273103}
+  - component: {fileID: 2580324517870873396}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -1359,7 +1360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 6533736767711273088}
-  m_MoveSpeed: 1
+  m_MoveSpeed: 3
   m_EnableStrafe: 1
   m_EnableFly: 0
   m_UseGravity: 1
@@ -1546,28 +1547,6 @@ MonoBehaviour:
   canTP: 0
   LeftTP: {fileID: 6533736769314112928}
   RightTP: {fileID: 6533736769457243137}
---- !u!195 &6533736767711273102
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6533736767711273090}
-  m_Enabled: 1
-  m_AgentTypeID: 1479372276
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &6533736767711273103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1581,8 +1560,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fov: 180
-  navMeshAgent: {fileID: 6533736767711273102}
+  navMeshObstacle: {fileID: 0}
   isInDimension: 0
+  followDestination: {fileID: 0}
+  montreMapNorm: {fileID: 21300000, guid: 6ea4ea605bcb01b45b5b5d67eea1ba0a, type: 3}
+  montreMapOni: {fileID: 21300000, guid: 96ec5f7e212c6554996a752f0f80700b, type: 3}
+  montreMap: {fileID: 2707780021421575712}
+--- !u!208 &2580324517870873396
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6533736767711273090}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 1, z: 2.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &6533736767873449843
 GameObject:
   m_ObjectHideFlags: 0

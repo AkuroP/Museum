@@ -51,7 +51,8 @@ public class Entity : MonoBehaviour
     #region EntityParameter
     [SerializeField]
     protected Player player;
-    protected NavMeshAgent agent;
+
+    public NavMeshAgent agent;
 
     [SerializeField]
     protected DialogController dialogController;
@@ -78,7 +79,6 @@ public class Entity : MonoBehaviour
     }
 
     public Player Player { get { return player;} set {  player = value;} }
-    public NavMeshAgent Agent { get { return agent;} set {  agent = value;} }
 
     public enum ENTITYTAG
     {

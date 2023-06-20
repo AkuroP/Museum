@@ -21,22 +21,22 @@ public class FollowState : EntityState
 
     public override void EnterState(Entity state)
     {
-        state.Agent.isStopped = false;
+        state.agent.isStopped = false;
         //Debug.Log("Enter Follow State");
     }
 
     public override void UpdateState(Entity state)
     {
-        state.Agent.SetDestination(followTarget.position);
+        state.agent.SetDestination(followTarget.position);
         //a voir avec le mouvement du rb ?
         //currentSpeed = Mathf.Lerp(currentSpeed, state.Agent.speed, currentSpeed * Time.deltaTime);
         
-        state.Anim.SetFloat("Speed", state.Agent.velocity.magnitude);
+        state.Anim.SetFloat("Speed", state.agent.velocity.magnitude);
 
         //Debug.Log("1 : " + Vector3.Distance(this.transform.position, state.Player.transform.position));
         //Debug.Log("2 : " + state.Player.NavMeshAgent.radius + state.Agent.stoppingDistance);
 
-        if (followPlayer && state.Agent.remainingDistance <= .5f)
+        if (followPlayer && state.agent.remainingDistance <= .5f)
         {
             
             entityStateMachine.ChangeState(state.IdleState);
@@ -45,7 +45,7 @@ public class FollowState : EntityState
 
     public override void ExitState(Entity state)
     {
-        state.Agent.isStopped = true;
+        state.agent.isStopped = true;
         state.Anim.SetFloat("Speed", 0);
         //Debug.Log("Exit Follow State");
     }

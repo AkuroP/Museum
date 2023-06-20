@@ -20,7 +20,7 @@ public class IdleState : EntityState
     public override void EnterState(Entity state)
     {
         //Debug.Log("Enter Idle State");
-        if(state.Agent != null && state.Agent.enabled)state.Agent.isStopped = true;
+        if(state.agent != null && state.agent.enabled)state.agent.isStopped = true;
         entityRenderer = state.GetComponentInChildren<MeshRenderer>();
         timeChangeState = Random.Range(0, maxTimeChangeState);
     }
@@ -39,7 +39,7 @@ public class IdleState : EntityState
     {
         if (!state.FollowState.FollowPlayer) return;
 
-        if (Vector3.Distance(this.transform.position, state.Player.transform.position) > restartFollowDistance + state.Agent.stoppingDistance)
+        if (Vector3.Distance(this.transform.position, state.Player.transform.position) > restartFollowDistance + state.agent.stoppingDistance)
         {
             //state.FollowState.FollowTarget = state.Player.transform;
             entityStateMachine.ChangeState(state.FollowState);
