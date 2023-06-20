@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 using static UnityEngine.EventSystems.EventTrigger;
 using System.Security.Permissions;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.Rendering;
 
 public class DialogController : MonoBehaviour
 {
@@ -32,6 +33,9 @@ public class DialogController : MonoBehaviour
     [Header("Movements")]
     [SerializeField] ActionBasedContinuousMoveProvider moveS;
 
+    [SerializeField]
+    private bool canTalk;
+
     private void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
@@ -51,17 +55,35 @@ public class DialogController : MonoBehaviour
         nextDialog.Disable();
     }
 
+    public void PointerGetEntity(Entity entity)
+    {
+        canTalk = true;
+        entityConcerned = entity;
+    }
+
+    public void PointerClearEntity()
+    {
+        canTalk = false;
+        entityConcerned = null;
+    }
+
+    public void VRPlayDialog()
+    {
+        if (!canTalk || entityConcerned == null) return;
+        PlayDialog(entityConcerned);
+    }
+
 
     public void PlayDialog(Entity entity)
     {
+        if (entity == null) return;
         _dialog = entity.EntityDialog[entity.CurrentDialogAdvancement];
-        if (player.CurrentDialog != null)
-        {
-            CloseDialog();           
-            player.CurrentDialog = null;
-        }
+        if (player.CurrentDialog == null) return;
+        
+        CloseDialog();
+        player.CurrentDialog = null;
 
-        entityConcerned = entity;
+        if(entityConcerned == null)entityConcerned = entity;
         
         //stop time
         //Time.timeScale = 1f;
@@ -196,7 +218,8 @@ public class DialogController : MonoBehaviour
 
     public void NextDialog(InputAction.CallbackContext ctx)
     {
-        if(_dialog == null) return;
+        if (_dialog == null && canTalk) VRPlayDialog();
+        else if(_dialog == null && !canTalk) return;
         NextSentence();
 
     }
