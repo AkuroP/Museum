@@ -125,6 +125,8 @@ public class QuestManager : MonoBehaviour
             allEggs.SetActive(false);
             endQuestAnim.SetBool("FinishQuest", true);
             movements.moveSpeed = 0;
+
+            AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["SFX_AllQuestItemsCollected"], this.transform.position, AudioManager.instance.soundEffectMixer, true, false, 1, 1, 360, 1, 10f);
             //avance dialogue des entites concerne
             foreach (Entity npc in allEntity)
             {

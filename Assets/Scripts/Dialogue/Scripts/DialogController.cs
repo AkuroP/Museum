@@ -171,8 +171,9 @@ public class DialogController : MonoBehaviour
 
         //stop actual audio
         if(_audioSource == null)return;
-        _audioSource.Stop();
-        
+        if (sentence.sfx == null) return;
+        if(_audioSource.clip != null)_audioSource.Stop();
+
         //set next audio
         _audioSource.clip = sentence.sfx;
         
@@ -218,7 +219,11 @@ public class DialogController : MonoBehaviour
 
     public void NextDialog(InputAction.CallbackContext ctx)
     {
-        if (_dialog == null && canTalk) VRPlayDialog();
+        if (_dialog == null && canTalk)
+        {
+            VRPlayDialog();
+            return;
+        }
         else if(_dialog == null && !canTalk) return;
         NextSentence();
 
