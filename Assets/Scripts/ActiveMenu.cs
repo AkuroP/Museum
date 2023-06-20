@@ -20,15 +20,15 @@ public class ActiveMenu : MonoBehaviour
         {
             panel.SetActive(true);
             
-            if (!panelShowed) AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["SFX_OpenHUD"], this.transform.position, AudioManager.instance.soundEffectMixer, true, false);
+            /*if (!panelShowed) AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["SFX_OpenHUD"], this.transform.position, AudioManager.instance.soundEffectMixer, true, false);
             panelShowed = true;
-            panelHided = false;
+            panelHided = false;*/
         }
         else
         {
-            if (!panelHided) AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["SFX_CloseHUD"], this.transform.position, AudioManager.instance.soundEffectMixer, true, false);
+            /*if (!panelHided) AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["SFX_CloseHUD"], this.transform.position, AudioManager.instance.soundEffectMixer, true, false);
             panelHided = true;
-            panelShowed = false;
+            panelShowed = false;*/
             panel.SetActive(false);
 
         }

@@ -66,7 +66,7 @@ MonoBehaviour:
   - audioName: SFX_CloseHUD
     audio: {fileID: 8300000, guid: c53ae1cb48d76b146ab7d5e3bc49810d, type: 3}
   - audioName: SFX_OpenHUD
-    audio: {fileID: 8300000, guid: 33e059d7551069446ade9078bb08989c, type: 3}
+    audio: {fileID: 8300000, guid: 10050747dfbd8cd489e0de49545e62e4, type: 3}
   - audioName: SFX_PasGrotteContinu
     audio: {fileID: 8300000, guid: 5f23e21b7c311574eb1e82f16b39dd8d, type: 3}
   - audioName: SFX_PasGrotteTP
@@ -93,6 +93,9 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 5dad357536066b641a1a0e76c5e16e83, type: 3}
   - audioName: 
     audio: {fileID: 8300000, guid: 7d407b9326f13a246a7abbcb681d56fb, type: 3}
+  playingSounds: []
+  adaptativeSounds: []
+  audioCoroutines: []
   maxFadeInTime: 2
   maxFadeOutTime: 2
   spatialBlend: 1

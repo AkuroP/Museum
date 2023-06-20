@@ -26,8 +26,15 @@ public class DialogConfig : MonoBehaviour
         public AudioClip sfx;
 
         public bool increment;
-        public int goToID;
-        public Entity[] entitiesConcerned;
+
+        [System.Serializable]
+        public struct DialogEntitiesConcerned
+        {
+            public Entity entity;
+            public int entitiesGoToID;
+        }
+
+        public DialogEntitiesConcerned[] entities;
 
         public bool playNextDialog;
 

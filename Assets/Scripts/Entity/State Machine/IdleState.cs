@@ -41,7 +41,7 @@ public class IdleState : EntityState
 
         if (Vector3.Distance(this.transform.position, state.Player.transform.position) > restartFollowDistance + state.Agent.stoppingDistance)
         {
-            state.FollowState.FollowTarget = state.Player.transform;
+            //state.FollowState.FollowTarget = state.Player.transform;
             entityStateMachine.ChangeState(state.FollowState);
         }
     }

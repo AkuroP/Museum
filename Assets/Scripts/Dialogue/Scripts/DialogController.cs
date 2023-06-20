@@ -171,9 +171,9 @@ public class DialogController : MonoBehaviour
 
     public void CloseDialog()
     {
-        foreach(Entity entity in _dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].entitiesConcerned)
+        foreach(DialogConfig.SentenceConfig.DialogEntitiesConcerned entity in _dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].entities)
         {
-            if (_dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].increment)entity.CurrentDialogAdvancement = _dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].goToID - 1;
+            if (_dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].increment)entity.entity.CurrentDialogAdvancement = entity.entitiesGoToID - 1;
         }
 
         //resume time
