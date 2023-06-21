@@ -30,9 +30,9 @@ public class ActivateTeleportationRay : MonoBehaviour
 
     void Update()
     {
-        leftRay.SetActive(leftCancel.action.ReadValue<float>() < 0.1f && leftActivate.action.ReadValue<float>() > 0.1f);
+        if(leftRay != null) leftRay.SetActive(leftCancel.action.ReadValue<float>() < 0.1f && leftActivate.action.ReadValue<float>() > 0.1f);
 
-        rightRay.SetActive(rightCancel.action.ReadValue<float>() < 0.1f && rightActivate.action.ReadValue<float>() > 0.1f);
+        if(rightRay != null)rightRay.SetActive(rightCancel.action.ReadValue<float>() < 0.1f && rightActivate.action.ReadValue<float>() > 0.1f);
 
         /*if (primary.action.WasPressedThisFrame())
         {
