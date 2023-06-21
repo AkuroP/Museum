@@ -126,7 +126,7 @@ public class QuestManager : MonoBehaviour
             artifactHUD.SetActive(true);
             FXtoPlay = FXscale;
             allEggs.SetActive(false);
-            endQuestAnim.SetBool("FinishQuest", true);
+            //endQuestAnim.SetBool("FinishQuest", true);
             movements.moveSpeed = 0;
 
 
