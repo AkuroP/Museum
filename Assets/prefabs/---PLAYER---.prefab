@@ -1506,7 +1506,7 @@ MonoBehaviour:
     m_Reference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   rightActivate:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Right Activate
       m_Type: 0

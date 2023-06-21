@@ -159,6 +159,9 @@ public class PortalInteraction : MonoBehaviour
     }   
     public IEnumerator DimensionChange(float time)
     {
+        //reset portal pos
+        r_InterActualPos.transform.position = r_portalInitialPos;
+        l_InterActualPos.transform.position = l_portalInitialPos;
         r_InterActualPos.GetComponent<MeshRenderer>().enabled = false;
         l_InterActualPos.GetComponent<MeshRenderer>().enabled = false;
         portalOpen = true;
@@ -193,9 +196,6 @@ public class PortalInteraction : MonoBehaviour
         openPortail.Stop();
         openingPortalFX = false;
 
-        //reset portal pos
-        r_InterActualPos.transform.position = r_portalInitialPos;
-        l_InterActualPos.transform.position = l_portalInitialPos;
         yield return new WaitForSecondsRealtime(.45f);
         passePortailVFX.SetActive(false);
     }
