@@ -37,6 +37,8 @@ public class DialogController : MonoBehaviour
     private bool canTalk;
     private bool onTalk;
 
+    private AudioSource aS;
+
     private void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
@@ -65,7 +67,7 @@ public class DialogController : MonoBehaviour
     public void PointerClearEntity()
     {
         canTalk = false;
-        if(!onTalk)entityConcerned = null;
+        //if(!onTalk)entityConcerned = null;
     }
 
     public void VRPlayDialog()
@@ -74,16 +76,20 @@ public class DialogController : MonoBehaviour
         PlayDialog(entityConcerned);
     }
 
-
+   
     public void PlayDialog(Entity entity)
     {
         onTalk = true;
         if (entity == null) return;
         _dialog = entity.EntityDialog[entity.CurrentDialogAdvancement];
-        if (player.CurrentDialog == null) return;
+        if (player.CurrentDialog != null)
+        {
+            CloseCurrentDialog();
+            player.CurrentDialog = null;
+            return;
+        }
+
         
-        CloseDialog();
-        player.CurrentDialog = null;
 
         if(entityConcerned == null)entityConcerned = entity;
         
@@ -99,6 +105,7 @@ public class DialogController : MonoBehaviour
 
         txtNameRight.text = actualDialog.nameRight;
         imgSpriteRight.sprite = actualDialog.spriteRight;*/
+        //Debug.Log("IU");
         RefreshBox();
     }
 
@@ -173,8 +180,9 @@ public class DialogController : MonoBehaviour
 
         //stop actual audio
         if (sentence.sfx == null) return;
+
+        aS = AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio[sentence.sfx.name], entityConcerned.transform.position, AudioManager.instance.soundEffectMixer, true, false, 1, 1, 360, 1, 10f);
        
-        AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio[sentence.sfx.name], entityConcerned.transform.position, AudioManager.instance.soundEffectMixer, true, false, 1, 1, 360, 1, 10f);
         //Debug.Log("YYE");
     }
 
@@ -182,11 +190,17 @@ public class DialogController : MonoBehaviour
     {
         if(_dialog == null)return;
         _idCurrentSentence++;
-        
-        if (_idCurrentSentence < _dialog.sentenceConfig.Count) RefreshBox();
-        else CloseDialog();
 
-
+        if (_idCurrentSentence < _dialog.sentenceConfig.Count)
+        {
+            if (aS != null) AudioManager.instance.RemoveSound(aS.clip.name);
+            RefreshBox();
+        }
+        else
+        {
+            CloseDialog();
+            return;
+        }
     }
 
     public void CloseDialog()
@@ -203,14 +217,25 @@ public class DialogController : MonoBehaviour
         //this.gameObject.SetActive(false);
 
         moveS.moveSpeed = 5;
-        _dialog.firstCharTxt.transform.parent.gameObject.SetActive(false);
-        if(_dialog.secondCharTxt != null) _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
+        _idCurrentSentence = 0;
         if(_dialog.sentenceConfig[_dialog.sentenceConfig.Count - 1].playNextDialog)
         {
+            //Debug.Log("ui");
+            //Debug.Log("entity concerned : " + entityConcerned);
+
             PlayDialog(entityConcerned);
             return;
         }
-        _idCurrentSentence = 0;
+        _dialog.firstCharTxt.transform.parent.gameObject.SetActive(false);
+        if(_dialog.secondCharTxt != null) _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
+        entityConcerned = null;
+        _dialog = null;
+    }
+
+    private void CloseCurrentDialog()
+    {
+        _dialog.firstCharTxt.transform.parent.gameObject.SetActive(false);
+        if (_dialog.secondCharTxt != null) _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
         entityConcerned = null;
         _dialog = null;
     }
