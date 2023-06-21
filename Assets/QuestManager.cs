@@ -10,8 +10,11 @@ public class QuestManager : MonoBehaviour
     [SerializeField] int numberOfEggs;
     [SerializeField] Sprite eggSprite;
     [SerializeField] ParticleSystem FXtoPlay;
-    [SerializeField] ActionBasedContinuousMoveProvider movements;
     [SerializeField] GameObject animEcaille;
+    [Header("Player")]
+    [SerializeField] ActionBasedContinuousMoveProvider movements;
+    [SerializeField] XRBaseController RightController;
+    [SerializeField] XRBaseController LeftController;
 
     [Header("HUD")]
     [SerializeField] List<Image> spriteList;
@@ -126,6 +129,10 @@ public class QuestManager : MonoBehaviour
             endQuestAnim.SetBool("FinishQuest", true);
             movements.moveSpeed = 0;
 
+
+            RightController.SendHapticImpulse(0.7f, 0.7f);
+            LeftController.SendHapticImpulse(0.7f, 0.7f);
+
             AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["SFX_AllQuestItemsCollected"], this.transform.position, AudioManager.instance.soundEffectMixer, true, false, 1, 1, 360, 1, 10f);
             //avance dialogue des entites concerne
             foreach (Entity npc in allEntity)
@@ -146,6 +153,7 @@ public class QuestManager : MonoBehaviour
         if (artifact1)
         {
             animEcaille.SetActive(true);
+            RightController.SendHapticImpulse(0.5f, 0.5f);
         }
     }
 }

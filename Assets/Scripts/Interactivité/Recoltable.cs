@@ -36,7 +36,7 @@ public class Recoltable : MonoBehaviour
 
     }
 
-    private void OnTriggerStay(Collider other)
+    /*private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Hand"))
         {
@@ -49,16 +49,21 @@ public class Recoltable : MonoBehaviour
             }
         }
         
-    }
+    }*/
 
     public void Stacking()
     {
+        fxRecolte.Play();
+        
         GameObject egg = questCanvas.GetComponentInChildren<RectTransform>().Find(number).gameObject;
         eggs = egg;
         AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["SFX_GrabItem"], this.transform.position, AudioManager.instance.soundEffectMixer, true, false, 1, 1, 360, 1, 10f);
         gameObject.SetActive(false);
         eggs.GetComponent<Image>().sprite = oeufSprite;
         eggs.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f );
-       // alpha.a = 255f;
+
+        if (!playDialog) return;
+        dialogController.ChangeIDDialogTo(idToGoIfPicked, returnToPreviousId, entity);
+        // alpha.a = 255f;
     }
 }
