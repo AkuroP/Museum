@@ -52,7 +52,9 @@ public class PortalInteraction : MonoBehaviour
     [SerializeField]
     private Vector3 portalTargetScale;
 
+    [SerializeField]
     private Vector3 r_portalInitialPos;
+    [SerializeField]
     private Vector3 l_portalInitialPos;
 
     [SerializeField]
