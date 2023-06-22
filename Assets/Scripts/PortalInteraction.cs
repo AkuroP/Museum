@@ -53,9 +53,9 @@ public class PortalInteraction : MonoBehaviour
     private Vector3 portalTargetScale;
 
     [SerializeField]
-    private Vector3 r_portalInitialPos;
+    private Transform r_portalInitialPos;
     [SerializeField]
-    private Vector3 l_portalInitialPos;
+    private Transform l_portalInitialPos;
 
     [SerializeField]
     private Transform rHand;
@@ -112,8 +112,8 @@ public class PortalInteraction : MonoBehaviour
     {
         lHand = Camera.main.transform.parent.GetChild(1);
         rHand = Camera.main.transform.parent.GetChild(2);
-        r_portalInitialPos = r_InterActualPos.transform.position;
-        l_portalInitialPos = l_InterActualPos.transform.position;
+        //r_portalInitialPos = r_InterActualPos.transform.position;
+        //l_portalInitialPos = l_InterActualPos.transform.position;
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
 
         
@@ -162,8 +162,7 @@ public class PortalInteraction : MonoBehaviour
     public IEnumerator DimensionChange(float time)
     {
         //reset portal pos
-        r_InterActualPos.transform.position = r_portalInitialPos;
-        l_InterActualPos.transform.position = l_portalInitialPos;
+        
         r_InterActualPos.GetComponent<MeshRenderer>().enabled = false;
         l_InterActualPos.GetComponent<MeshRenderer>().enabled = false;
         portalOpen = true;
@@ -173,6 +172,8 @@ public class PortalInteraction : MonoBehaviour
         AudioSource passePortailSFX = AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["SFX_PortalOpen"], this.transform.position, AudioManager.instance.soundEffectMixer, true, false, 1f, 1f, 360f, 1f, 10f);
         yield return new WaitForSeconds(.6f);
         RenderSettings.skybox = nextWorldSkyBoxMat;
+        r_InterActualPos.transform.position = r_portalInitialPos.position;
+        l_InterActualPos.transform.position = l_portalInitialPos.position;
         r_InterActualPos.GetComponent<MeshRenderer>().enabled = true;
         l_InterActualPos.GetComponent<MeshRenderer>().enabled = true;
 
