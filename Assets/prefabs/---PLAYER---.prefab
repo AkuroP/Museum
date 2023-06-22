@@ -1560,7 +1560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fov: 180
   navMeshObstacle: {fileID: 0}
-  isInDimension: 0
+  isInDimension: 1
   followDestination: {fileID: 0}
   montreMapNorm: {fileID: 21300000, guid: 6ea4ea605bcb01b45b5b5d67eea1ba0a, type: 3}
   montreMapOni: {fileID: 21300000, guid: 96ec5f7e212c6554996a752f0f80700b, type: 3}

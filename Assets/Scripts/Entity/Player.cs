@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         navMeshObstacle = this.GetComponent<NavMeshObstacle>();
-        AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["OST_NormalLoop"], this.transform.position, AudioManager.instance.ostMixer, false, true);
+        AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["OST_OniriqueV3Loop"], this.transform.position, AudioManager.instance.ostMixer, false, true);
     }
 
     // Update is called once per frame
