@@ -81,13 +81,13 @@ public class DialogController : MonoBehaviour
     {
         onTalk = true;
         if (entity == null) return;
-        _dialog = entity.EntityDialog[entity.CurrentDialogAdvancement];
         if (player.CurrentDialog != null)
         {
             CloseCurrentDialog();
             player.CurrentDialog = null;
             return;
         }
+        _dialog = entity.EntityDialog[entity.CurrentDialogAdvancement];
 
         
 

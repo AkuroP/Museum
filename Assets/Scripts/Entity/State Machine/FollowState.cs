@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
 using UnityEngine;
 
 public class FollowState : EntityState
@@ -19,6 +20,8 @@ public class FollowState : EntityState
         set { followTarget = value; }
     }
 
+    //public bool stopFollowing;
+
     public override void EnterState(Entity state)
     {
         state.agent.isStopped = false;
@@ -35,17 +38,19 @@ public class FollowState : EntityState
 
         //Debug.Log("1 : " + Vector3.Distance(this.transform.position, state.Player.transform.position));
         //Debug.Log("2 : " + state.Player.NavMeshAgent.radius + state.Agent.stoppingDistance);
-
+        Debug.Log(state.agent.remainingDistance);
         if (followPlayer && state.agent.remainingDistance <= .5f)
         {
             
+            state.agent.isStopped = true;
+            //state.agent.ResetPath();
             entityStateMachine.ChangeState(state.IdleState);
+            //stopFollowing = true;
         }
     }
 
     public override void ExitState(Entity state)
     {
-        state.agent.isStopped = true;
         state.Anim.SetFloat("Speed", 0);
         //Debug.Log("Exit Follow State");
     }
