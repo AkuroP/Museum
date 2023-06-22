@@ -39,6 +39,9 @@ public class DialogController : MonoBehaviour
 
     private AudioSource aS;
 
+    public float maxTimer;
+    public float timer;
+
     private void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
@@ -56,6 +59,21 @@ public class DialogController : MonoBehaviour
     private void OnDisable()
     {
         nextDialog.Disable();
+    }
+
+    private void Update()
+    {
+        if (canTalk)
+        {
+            if (onTalk) return;
+            if(timer >= maxTimer)
+            {
+                PlayDialog(entityConcerned);
+                timer = 0;
+            }
+            else timer += Time.deltaTime;
+
+        }
     }
 
     public void PointerGetEntity(Entity entity)
@@ -242,12 +260,7 @@ public class DialogController : MonoBehaviour
 
     public void NextDialog(InputAction.CallbackContext ctx)
     {
-        if (_dialog == null && canTalk && !onTalk)
-        {
-            VRPlayDialog();
-            return;
-        }
-        else if(_dialog == null && !canTalk && onTalk) return;
+        if(_dialog == null && !canTalk && onTalk) return;
         NextSentence();
 
     }

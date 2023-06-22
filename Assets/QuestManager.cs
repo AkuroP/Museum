@@ -154,6 +154,7 @@ public class QuestManager : MonoBehaviour
         {
             animEcaille.SetActive(true);
             RightController.SendHapticImpulse(0.5f, 0.5f);
+
         }
     }
 }

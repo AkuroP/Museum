@@ -4379,6 +4379,7 @@ MonoBehaviour:
   maxTimeChangeState: 0
   restartFollowDistance: 0
   timer: 0
+  speed: 2
 --- !u!114 &8108478895934746323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4412,6 +4413,7 @@ MonoBehaviour:
   wanderState: {fileID: 0}
   anim: {fileID: 0}
   player: {fileID: 0}
+  agent: {fileID: 0}
   dialogController: {fileID: 0}
   entityDialog:
   - {fileID: 0}
