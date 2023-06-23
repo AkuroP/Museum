@@ -135,7 +135,7 @@ public class QuestManager : MonoBehaviour
 
             AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["SFX_AllQuestItemsCollected"], this.transform.position, AudioManager.instance.soundEffectMixer, true, false, 1, 1, 360, 1, 10f);
             //avance dialogue des entites concerne
-            foreach (Entity npc in allEntity)
+            /*foreach (Entity npc in allEntity)
             {
                 foreach(Entity.ENTITYTAG qTag in questTag)
                 {
@@ -144,7 +144,7 @@ public class QuestManager : MonoBehaviour
                         npc.CurrentDialogAdvancement += 1;
                     }
                 }
-            }
+            }*/
         }
     }
 

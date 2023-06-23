@@ -62,8 +62,8 @@ public class Recoltable : MonoBehaviour
         eggs.GetComponent<Image>().sprite = oeufSprite;
         eggs.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f );
 
-        if (!playDialog) return;
         dialogController.ChangeIDDialogTo(idToGoIfPicked, returnToPreviousId, entity);
+        //if (!playDialog);
         // alpha.a = 255f;
     }
 }

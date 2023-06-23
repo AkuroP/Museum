@@ -270,7 +270,7 @@ public class DialogController : MonoBehaviour
         int localID = entity.CurrentDialogAdvancement;
 
         entity.CurrentDialogAdvancement = idToGo;
-        PlayDialog(entity);
+        //PlayDialog(entity);
         if(returnToPreviousId)entity.CurrentDialogAdvancement = localID - 1;
         if (returnToSpecificId > -1) entity.CurrentDialogAdvancement = returnToSpecificId;
     }
