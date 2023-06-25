@@ -62,9 +62,9 @@ public class Entity : MonoBehaviour
         set { dialogController = value; }
     }
     [SerializeField]
-    protected DialogConfig[] entityDialog;
+    protected List<DialogConfig> entityDialog;
 
-    public DialogConfig[] EntityDialog
+    public List<DialogConfig> EntityDialog
     {
         get { return entityDialog; }
         set { entityDialog = value; }

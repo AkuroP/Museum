@@ -16,9 +16,16 @@ public class Recoltable : MonoBehaviour
     [Header("Dialog")]
     //Phrase selon bon oeuf oupa
     [SerializeField] bool playDialog;
+    [SerializeField] Entity entityPlayDialog;
     [SerializeField] DialogController dialogController;
-    [SerializeField] Entity entity;
-    [SerializeField] int idToGoIfPicked;
+    [System.Serializable]
+    public struct EntitiesConcerned
+    {
+        public Entity entity;
+        public int idToGoIfPicked;
+
+    }
+    public EntitiesConcerned[] entitiesConcerned;
     [SerializeField] bool returnToPreviousId;
     [Tooltip("retourne à ID precise si valeur positive")]
     [SerializeField] int returnToSpecificId = -1;
@@ -62,8 +69,11 @@ public class Recoltable : MonoBehaviour
         eggs.GetComponent<Image>().sprite = oeufSprite;
         eggs.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f );
 
-        dialogController.ChangeIDDialogTo(idToGoIfPicked, returnToPreviousId, entity);
-        //if (!playDialog);
+        foreach(EntitiesConcerned entityConcerned in entitiesConcerned)
+        {
+            dialogController.ChangeIDDialogTo(entityConcerned.idToGoIfPicked, returnToPreviousId, entityConcerned.entity);
+        }
+        if (playDialog)dialogController.PlayDialog(entityPlayDialog);
         // alpha.a = 255f;
     }
 }

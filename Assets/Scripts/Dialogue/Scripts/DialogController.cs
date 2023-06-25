@@ -65,7 +65,7 @@ public class DialogController : MonoBehaviour
     {
         if (canTalk)
         {
-            if (onTalk) return;
+            //if (onTalk) return;
             if(timer >= maxTimer)
             {
                 PlayDialog(entityConcerned);
@@ -99,12 +99,7 @@ public class DialogController : MonoBehaviour
     {
         onTalk = true;
         if (entity == null) return;
-        if (player.CurrentDialog != null)
-        {
-            CloseCurrentDialog();
-            player.CurrentDialog = null;
-            return;
-        }
+        if (_dialog != null)CloseCurrentDialog();
         _dialog = entity.EntityDialog[entity.CurrentDialogAdvancement];
 
         
@@ -252,8 +247,10 @@ public class DialogController : MonoBehaviour
 
     private void CloseCurrentDialog()
     {
+        //Debug.Log("CLOSE");
         _dialog.firstCharTxt.transform.parent.gameObject.SetActive(false);
         if (_dialog.secondCharTxt != null) _dialog.secondCharTxt.transform.parent.gameObject.SetActive(false);
+        _idCurrentSentence = 0;
         entityConcerned = null;
         _dialog = null;
     }

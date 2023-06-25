@@ -39,11 +39,13 @@ public class FollowState : EntityState
         //Debug.Log("1 : " + Vector3.Distance(this.transform.position, state.Player.transform.position));
         //Debug.Log("2 : " + state.Player.NavMeshAgent.radius + state.Agent.stoppingDistance);
         //Debug.Log(state.agent.remainingDistance);
-        if (followPlayer && state.agent.remainingDistance <= .5f)
+        //Debug.Log(state.agent.velocity);
+        if (followPlayer && state.agent.remainingDistance <= state.agent.stoppingDistance)
         {
             
             state.agent.isStopped = true;
             //state.agent.ResetPath();
+            state.agent.velocity = Vector3.zero;
             entityStateMachine.ChangeState(state.IdleState);
             //stopFollowing = true;
         }
