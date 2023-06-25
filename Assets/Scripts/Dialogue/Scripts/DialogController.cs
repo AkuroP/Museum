@@ -85,6 +85,7 @@ public class DialogController : MonoBehaviour
     public void PointerClearEntity()
     {
         canTalk = false;
+        timer = 0;
         //if(!onTalk)entityConcerned = null;
     }
 
