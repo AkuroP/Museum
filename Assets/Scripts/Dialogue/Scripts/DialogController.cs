@@ -42,6 +42,8 @@ public class DialogController : MonoBehaviour
     public float maxTimer;
     public float timer;
 
+    private bool next;
+
     private void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
@@ -74,6 +76,16 @@ public class DialogController : MonoBehaviour
             else timer += Time.deltaTime;
 
         }
+    }
+
+    public void ActivateNext()
+    {
+        next = true;
+    }
+
+    public void DeactivateNext()
+    {
+        next = false;
     }
 
     public void PointerGetEntity(Entity entity)
@@ -202,6 +214,7 @@ public class DialogController : MonoBehaviour
 
     public void NextSentence()
     {
+        if (next) return;
         if(_dialog == null)return;
         _idCurrentSentence++;
 
