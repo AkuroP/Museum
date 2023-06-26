@@ -111,6 +111,8 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 94ee7890b2d3c6b4fa8296359c0bf6e8, type: 3}
   - audioName: YucoVoiceGrotte3
     audio: {fileID: 8300000, guid: ef94e6e24a620124da31d5036b30acac, type: 3}
+  - audioName: SFX_TotemPosed
+    audio: {fileID: 8300000, guid: 71db5684b989ddb46b0ab04bdf1f2c7b, type: 3}
   playingSounds: []
   adaptativeSounds: []
   audioCoroutines: []
