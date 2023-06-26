@@ -74,7 +74,7 @@ public class AudioManager : MonoBehaviour
         if (instance != null)Destroy(this.gameObject);
         instance = this;
 
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
 
         foreach(var audio in audioList)
         {

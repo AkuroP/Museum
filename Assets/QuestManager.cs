@@ -42,6 +42,8 @@ public class QuestManager : MonoBehaviour
     public bool QuestEggFinished { get => questEggFinished; }
     public bool Artifact1 { get => artifact1;}
 
+    public bool questClear;
+
     private void Start()
 
     {
@@ -119,6 +121,7 @@ public class QuestManager : MonoBehaviour
 
     public void FinishEggQuest()
     {
+        if (questClear) return;
         if (questEggFinished)
         {
             artifact1 = true;
@@ -133,7 +136,9 @@ public class QuestManager : MonoBehaviour
             RightController.SendHapticImpulse(0.7f, 0.7f);
             LeftController.SendHapticImpulse(0.7f, 0.7f);
 
-            AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["SFX_AllQuestItemsCollected"], this.transform.position, AudioManager.instance.soundEffectMixer, true, false, 1, 1, 360, 1, 10f);
+            AudioManager.instance.PlayClipAt(AudioManager.instance.allAudio["SFX_AllQuestItemsCollected"], this.transform.position, AudioManager.instance.soundEffectMixer, true, false, 1, 0.3f, 360, 1, 20f);
+            questClear = true;
+            //Debug.Log("YEEEEEEEE");
             //avance dialogue des entites concerne
             /*foreach (Entity npc in allEntity)
             {
