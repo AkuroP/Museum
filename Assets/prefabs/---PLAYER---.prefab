@@ -1230,6 +1230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 6533736767873449843}
   fxMontre: {fileID: 671225352199042913}
+  MontreValue: 40
 --- !u!1 &6533736767353955160
 GameObject:
   m_ObjectHideFlags: 0
